@@ -7,15 +7,15 @@ categories: web nfs apache ssl
 ---
 
 ##learn co
-  -> get IP address for server
-  -> assemble http request, sends an ack
-  -> open a tcp connection on 80 (or 443 for SSL)
-  -> tcp port established between user and host (over 1024)
-  -> ssl negotiation, user provides public key and the host provides its public key we validate based on a cert provider and then we are provided a symetric key that we use with that site going forward
-  -> nat - network address translation
-  -> GET HTTP request
+  - get IP address for server
+  - assemble http request, sends an ack
+  - open a tcp connection on 80 (or 443 for SSL)
+  - tcp port established between user and host (over 1024)
+  - ssl negotiation, user provides public key and the host provides its public key we validate based on a cert provider and then we are provided a symetric key that we use with that site going forward
+  - nat - network address translation
+  - GET HTTP request
 
-##On the server -> 
+##On the server
   - HA proxy (ssl negotiation, load balancing) (we could replace this with nginx)
   - apache (speaks http, this is the web server)
   - phusion passenger (the workers that enable concurrancy)
