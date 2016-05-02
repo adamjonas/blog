@@ -12,7 +12,8 @@ rsync_args     = ""  # Any extra arguments to pass to rsync
 deploy_default = "push"
 
 # This will be configured for you when you run config_deploy
-deploy_branch  = "gh-pages"
+deploy_branch  = "master"
+repo_url = 'git@github.com:adamjonas/adamjonas.github.io.git'
 
 ## -- Misc Configs -- ##
 
@@ -308,8 +309,8 @@ task :setup_github_pages, :repo do |t, args|
     repo_url = get_stdin("Repository url: ")
   end
   user = repo_url.match(/:([^\/]+)/)[1]
-  branch = (repo_url.match(/\/[\w-]+\.github\.com/).nil?) ? 'gh-pages' : 'master'
-  project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
+  branch = (repo_url.match(/\/[\w-]+\.github\.com/).nil?) ? 'master' : 'master'
+  project = (branch == 'master') ? repo_url.match(/\/([^\.]+)/)[1] : ''
   unless (`git remote -v` =~ /origin.+?octopress(?:\.git)?/).nil?
     # If octopress is still the origin remote (from cloning) rename it to octopress
     system "git remote rename origin octopress"
@@ -328,7 +329,7 @@ task :setup_github_pages, :repo do |t, args|
       end
     end
   end
-  url = "http://#{user}.github.com"
+  url = "http://adamjonas.com"
   url += "/#{project}" unless project == ''
   jekyll_config = IO.read('_config.yml')
   jekyll_config.sub!(/^url:.*$/, "url: #{url}")
@@ -342,7 +343,7 @@ task :setup_github_pages, :repo do |t, args|
     system "echo 'My Octopress Page is coming soon &hellip;' > index.html"
     system "git add ."
     system "git commit -m \"Octopress init\""
-    system "git branch -m gh-pages" unless branch == 'master'
+    system "git branch -m master" unless branch == 'master'
     system "git remote add origin #{repo_url}"
     rakefile = IO.read(__FILE__)
     rakefile.sub!(/deploy_branch(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_branch\\1=\\2\\3#{branch}\\3")
@@ -352,6 +353,31 @@ task :setup_github_pages, :repo do |t, args|
     end
   end
   puts "\n---\n## Now you can deploy to #{url} with `rake deploy` ##"
+end
+
+desc 'set master as default deployment branch'
+task 'set_branch_for_deployment', :repo do |t, args|
+  rm_rf deploy_dir
+  mkdir deploy_dir
+  cd "#{deploy_dir}" do
+    system "git init"
+    system "echo 'My Octopress Page is coming soon &hellip;' > index.html"
+    system "git add ."
+    system "git commit -m \"Octopress init\""
+    system "git branch -m master"
+    system "git remote add origin #{repo_url}"
+  end
+  puts "\n---\n## Now you can deploy to #{repo_url} with `rake deploy` ##"
+end
+
+desc "Re-run config"
+task :re_run_config, :repo do |t, args|
+  url = "http://adamjonas.com"
+  jekyll_config = IO.read('_config.yml')
+  jekyll_config.sub!(/^url:.*$/, "url: #{url}")
+  File.open('_config.yml', 'w') do |f|
+    f.write jekyll_config
+  end
 end
 
 def ok_failed(condition)
