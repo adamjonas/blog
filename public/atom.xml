@@ -4,7 +4,7 @@
   <title><![CDATA[Hack hack hack...]]></title>
   <link href="http://adamjonas.com/atom.xml" rel="self"/>
   <link href="http://adamjonas.com/"/>
-  <updated>2015-12-31T13:12:38-05:00</updated>
+  <updated>2016-05-02T17:05:48-04:00</updated>
   <id>http://adamjonas.com/</id>
   <author>
     <name><![CDATA[Adam Jonas]]></name>
@@ -12,6 +12,916 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My take on maker versus manager]]></title>
+    <link href="http://adamjonas.com/blog/my-take-on-maker-versus-manager/"/>
+    <updated>2016-04-28T12:01:00-04:00</updated>
+    <id>http://adamjonas.com/blog/my-take-on-maker-versus-manager</id>
+    <content type="html"><![CDATA[<p>I toed the line for months trying to code a little and be the manager I wanted to be. When the team was at 8 I could find time to block off a morning without meetings or distractions. I could be a hybrid. As we grew to 12 it became untenable. The code I contributed was copy and CSS changes. Barely anything that was worthwhile from a contribution perspective. Letting go was the healthiest thing I could do. I’m not a coder anymore and I admitted that to my team in a frank conversation about imposter syndrome a few weeks ago. I’m a conductor. My job is to make sure the symphony continues to play in harmony. To draw out the sounds and rhythms of my individuals through 1 on 1s, quarterlies and conversations in the hallways.</p>
+
+<p>Being an effective hybrid is possible. We have one. He is a great individual contributor and without fail he does his 1 on 1s and still pushes a ton of code. It works and he is getting the reps he needs to be a future CTO. Taking him off the keyboard would make him miserable and so he’ll toe the line for a while. He has 5 reports and I’m wary to give him more.</p>
+
+<p>I’ve heard coders talk about how bad managers are out of touch because they don’t build anything anymore. I agree, which scares me. Which is why I want to try an experiment. I went on a paternity leave in October for a full month. I totally unplugged and trusted my lieutenants to carry the load. It went fine. No fires. Nobody quit. No month long rabbit holes anyone fell into. There was some maintenance and fine tuning to be done upon my return and some of the project assignments were off, but overall things went well. Meaning that if I disappeared for another month things would likely be fine again. Meaning I could become a dev for a month and let my lieutenants run the show again. I think it would be hard for me to resist my natural inclination to push, nudge and otherwise direct how the team runs, but what might happen if I stop going to all the high level meetings? We’ll find out. I’m going to propose we try it next month.</p>
+
+<p>To be the manager my people deserve for a team of certain size I needed to let go of my drive to code. Sure I can nibble on small projects, but my days of plugging in and zoning out are seemingly over. Hybrids can be of value, but if you are running the show and managing anything larger than a team of 7-8 then you are doing yourself and your team a disservice by trying to focus on anything but your people.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Computer Science according to Spencer]]></title>
+    <link href="http://adamjonas.com/blog/computer-science-according-to-spencer/"/>
+    <updated>2016-04-27T13:07:00-04:00</updated>
+    <id>http://adamjonas.com/blog/computer-science-according-to-spencer</id>
+    <content type="html"><![CDATA[<h2>What is it</h2>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/1062811/difference-between-a-computer-scientist-and-computer-programmer">cs versus programming</a></li>
+</ul>
+
+
+<h2>Big O</h2>
+
+<ul>
+<li>used to classify algorithms by changes to the inputs</li>
+<li>O(1) - constant time - kilometers to millimeters</li>
+<li>O(log n) - opposite of exponential growth, searching binary tree</li>
+<li>O(n) - iterating over an array</li>
+<li>O(n log n) - good sorting algorithms</li>
+<li>O(n<sup>2)</sup> - bubble sort (bad algoritms)</li>
+<li>O(2<sup>n)</sup> - the chess board, example doubling something</li>
+</ul>
+
+
+<h2>Exercises</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="mi">1</span><span class="o">.</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="nf">rectangle_area</span><span class="o">(</span><span class="n">height</span><span class="o">,</span> <span class="n">width</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 1</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">height</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 2*height + 1</span>
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">width</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 2*height*width + height</span>
+</span><span class='line'>        <span class="n">area</span><span class="o">++;</span> <span class="c1">// height*width</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">area</span><span class="o">;</span> <span class="c1">// 1</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nl">complexity:</span> <span class="mi">3</span><span class="o">*</span><span class="n">height</span><span class="o">*</span><span class="n">width</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">height</span> <span class="o">+</span> <span class="mi">3</span>
+</span><span class='line'>  <span class="nl">order:</span> <span class="n">O</span><span class="o">(</span><span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  <span class="mi">2</span><span class="o">.</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">Constant</span> <span class="n">time</span><span class="o">.</span> <span class="nf">O</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="mi">3</span><span class="o">.</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="nf">halves</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 1</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// n</span>
+</span><span class='line'>      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="c1">// n</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;)</span> <span class="o">{</span> <span class="c1">// n + n + n</span>
+</span><span class='line'>      <span class="n">count</span><span class="o">++;</span> <span class="c1">// n</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">count</span><span class="o">;</span> <span class="c1">// 1</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nl">Complexity:</span> <span class="mi">6</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2</span>
+</span><span class='line'>  <span class="n">Order</span> <span class="nf">O</span><span class="o">(</span><span class="n">log</span> <span class="n">n</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="mi">4</span><span class="o">.</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="nf">bacteria_generation</span><span class="o">(</span><span class="n">days</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">total_population</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="c1">// 1</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">current_population</span> <span class="o">=</span> <span class="n">total_population</span><span class="o">;</span> <span class="c1">// 1</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">days</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 1 + days - 1 + days - 1</span>
+</span><span class='line'>      <span class="n">current_population</span> <span class="o">=</span> <span class="n">total_population</span><span class="o">;</span> <span class="c1">// days - 1</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">current_population</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">total_population</span><span class="o">++;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">total_population</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nl">Order:</span> <span class="n">O</span><span class="o">(</span><span class="mi">2</span><span class="n">n</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quarterlies]]></title>
+    <link href="http://adamjonas.com/blog/quarterlies/"/>
+    <updated>2016-04-22T11:54:00-04:00</updated>
+    <id>http://adamjonas.com/blog/quarterlies</id>
+    <content type="html"><![CDATA[<p>Weekly 1 on 1s are not enough. Maybe if I did them better they would be, but mine are all on Fridays and often I’m not able to tease out anything more than the day to day updates and feelings of the past week. That’s not to say that I’m going to stop, 1 on 1s keep me connected to my reports and even if 1 out of every 5 is a breakthrough session then it is time very well spent.</p>
+
+<p>The problem that I see in 1 on 1s as I run them is that it is hard to focus on the longer arching themes on a weekly basis. For whatever reason, it feels awkward to ask about career goals, work fulfillment, etc. with such regularity. Enter the quarterly. I’ve just completed my fourth attempt of quarterlies (not including the annual review). I’m happy with the conversations and the depth of the issues we discuss in those session but my attempt at this didn’t start very well.</p>
+
+<p>Here were the set of questions from the first quarterly survey which I conducted using google forms:</p>
+
+<ul>
+<li>How happy are you in labs?</li>
+<li>I feel like I&#8217;m growing my skills</li>
+<li>I get clear and frequent feedback about my performance?</li>
+<li>Given the products we are building, what types of things do you want to work on?</li>
+<li>What skills (on or off the keyboard) do you want to improve that you don&#8217;t see an opportunity to do in your current role?</li>
+<li>I understand why we are building Learn and the related apps</li>
+<li>If you answer that you get it, please summarize why we are putting so much work into Learn.</li>
+<li>If you answered you don&#8217;t get it, please tell me what needs further explanation.</li>
+<li>Anything else you want to discuss?</li>
+<li>What is one thing that would make you happier or more productive?</li>
+</ul>
+
+
+<p>This caused a lot of anxiety. Why am I doing this? What was I going to use this information for? Many of those first conversations were stilted, even confrontational. Someone actually took this time to give his two week notice. It wasn’t pretty. Even so, I was able to battle through these difficult conversations and pull out a lot of agenda topics that we were able to resolve as a group. This made it all worthwhile. Gathering the team in the room to talk about issues that were affecting all of us and re-focus our direction was incredibly fruitful. I also followed up with the individuals that took issue with the set of questions I was asking and had them help me craft a questionnaire that was easier for them to swallow.</p>
+
+<p>Three month later the process went much smoother. Here were the revised questions.</p>
+
+<ul>
+<li>I feel like I&#8217;m growing my skills</li>
+<li>What is one thing that would make you happier or more productive?</li>
+<li>In what ways would you like to grow your skills? What kind of support will you need?</li>
+<li>Do you feel like you’re getting enough clear feedback?</li>
+<li>How do you feel about the Lab&#8217;s processes in general?</li>
+<li>Given the products we are building, what types of things do you want to work on?</li>
+<li>I find the work that I do full of meaning and purpose</li>
+<li>I am proud of the work that I do for my team</li>
+<li>The work that I do is challenging</li>
+<li>How would you rate yourself in the following 4 tenets of our “shipping culture” (circle one for each category):</li>
+<li>Velocity</li>
+<li>Quality</li>
+<li>Ownership</li>
+<li>Communication</li>
+</ul>
+
+
+<p>This one clicked much better. I got great responses and we had a great team discussion. Processes changed, people were engaged and excited to debate with each other. I was able to present the group with statistics on aggregated stats on how challenged individuals felt and where we needed to improve as a group.</p>
+
+<p>A year later, this is the best thing I think I do as a manager. We ask similar long form answers but have dropped the ratings of the department values in lieu of the company values (see future post on Value Based Assessments). With a young team, it isn’t uncommon for me to see career aspirations change quarter along with engagement and performance. I’ve found these quarterlies to be better discussions than the annual review. Some reasons might be, it isn’t as formal or mired in the connotations of a scary end of year process. I use google forms rather than some HR software, which seems pretty natural and lightweight for devs. I choose a venue that seems more informal but is still off-site (recently I’ve been camping out at Au Bon Pain). And yet, much of this conversation is spent on discussing performance, areas of improvement, how to grow, resetting expectations and ways to improve the team and product &#8211; all the things that I would imagine a good annual review process is supposed to do. This cycle I’ve scheduled 90 minutes for each session but not one actually was completed in time. People are talking for 2 to 2 ½ hour stretches even though it is basically the same set of questions that I’ve used for the last three rounds. This is a huge investment of time. All said and done I will have done more than 30 hours of quarterlies before preparing a deck we can discuss as a group. But this is working and the conversations have improved every quarter.</p>
+
+<p>Even with its rocky start, quarterlies have served us well. I would have never known many of the team’s process pain points without these conversations and it has saved me when performance slips so that I can get on the record to address it quickly. If annual reviews are broken my first guess would be that even if they are conducted well, they are just too infrequent. Things on my team move too quickly to address on a 12-month cycle. This is my best shot at making it better.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[When I didn't see it in the interview]]></title>
+    <link href="http://adamjonas.com/blog/when-i-didnt-see-it-in-the-interview/"/>
+    <updated>2016-04-15T11:46:00-04:00</updated>
+    <id>http://adamjonas.com/blog/when-i-didnt-see-it-in-the-interview</id>
+    <content type="html"><![CDATA[<p>Raw intellect isn’t enough. Just like product market fit we need to see person-job fit. How can we test it? Good people with drive and patience for change and a healthy sense of duty seem to be able to adjust to nearly any job for a short period. We can all do any job for six months and knock it out of the park.</p>
+
+<p>I think about a particular interview where I left so excited about the candidate. They were quirky, but thoughtfully engaged. They grasped what we did here and why it was important. They thirsted for new knowledge and challenge. They were young and ambitious. No work experience of any kind.</p>
+
+<p>But when he arrived it was an utter let down. The focus wasn’t on getting as good as possible as quickly as possible but rather maintaining balance at all times. Never pushing himself to be in the trenches with his brethren in times as the pressure bore down on them or let the passion take him deep into the night when we feel the torment of an unfinished idea demanding completion.</p>
+
+<p>All the raw materials were there. What did I miss? If we hire someone with no work history, does the onboarding process need to be different? Do we need to teach them not only how to do the job but also how to be an employee? What expectations did we set to encourage him to rise to be great?</p>
+
+<p>I cannot move past my disappointment. I signed off on him. I had high expectations. Though not my direct report, I provided course corrections. As time continues to march on the disappointment builds. I notice the small improvements but never the grand about-face for which I hold out hope. That one day when he will wake up, open his eyes to observe and finally be dissatisfied with his mediocrity.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Optical Distortion, Inc. HBS Case Study]]></title>
+    <link href="http://adamjonas.com/blog/optical-distortion-inc-hbs-case-study/"/>
+    <updated>2016-04-13T16:02:00-04:00</updated>
+    <id>http://adamjonas.com/blog/optical-distortion-inc-hbs-case-study</id>
+    <content type="html"><![CDATA[<h2>ODI Discussion/Analysis Questions</h2>
+
+<p>1)</p>
+
+<ul>
+<li>What characteristics of the ODI lens are likely to make it appealing/unappealing to farmers?
+
+<ul>
+<li><p>Appealing</p>
+
+<ul>
+<li>debeaking causes problems of their own in terms of the trauma it causes hurts short term production (for a full week, only 1 egg lost by 5 months) and in the long term in feed is wasted. Debeaking is not an exact science but reduced cannibalism to 9% from 25%.</li>
+<li>for $2.50/hour could debeak approximately 220 birds per hour.</li>
+<li>actually modifies behavior as opposed to reducing the weapon. Reduces cannibalsim to 4.5% (1/2 of debeaking)
+
+<ul>
+<li>225 birds an hour to put in lense</li>
+</ul>
+</li>
+<li>reduces feed costs from 24.46 pounds to 23.68 lbs per 100 birds
+
+<ul>
+<li>20,000 bird flock could save 156 pounds of feed per day ($12.324/day)</li>
+<li>$158 per ton - $.079/lbs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>unappealing</p>
+
+<ul>
+<li>more upfront cost</li>
+<li>can cause eye infection/fall out of place</li>
+<li>change from current practice.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>2)</p>
+
+<ul>
+<li>What is the value to famers of lenses over debeaking? Can you quantify it? (Hint: Think about savings from cannibalization, egg reduction, feed, and labor)
+
+<ul>
+<li>$.00073 a bird for the debeaking process (which would be unneccessary).</li>
+<li>$.22 per bird feed savings over a hen&#8217;s lifetime</li>
+<li>$.108 in reduction in replacement cost of of $.21 since lenses reduces cannibolism by 1/2.</li>
+<li><p>$.224 of added production in egg production. Hen lays 22 dozen eggs a year. If they lose a week of production from debeaking that is .423 dozen a week (which is 5 eggs a week) and if you assume that is $.53 a dozen that is $.224 cents of lost egg production per bird.</p></li>
+<li><p>adds up to ~$.33 in added value per bird over their lifetime -> for large farms (50,000 birds) that $17,500 in added revenue a year (though it is annual cashflow of $12 million). For a small farm (10k) is it $3,500.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p>3)</p>
+
+<ul>
+<li>What Pricing policy should ODI adopt and why? What is the savings per bird for farmers at these prices?
+
+<ul>
+<li>need market acceptance</li>
+<li><p>somewhere around $.35 per bird in added value, which would easily cover the $.07 price increase.</p></li>
+<li><p>Skimming Price</p>
+
+<ul>
+<li>For products that represent a drastic departure from accepted ways of performing a service, a policy of relatively high prices coupled with heavy promotional expenditures in the early stages of market development (and lower prices at later stages) has proved successful for many products.</li>
+</ul>
+</li>
+<li>Penetration pricing
+
+<ul>
+<li>This policy is the reverse of the skimming policy in which the price is lowered only as short-run competition forces it.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a href="https://hbr.org/1976/11/pricing-policies-for-new-products">Pricibg Strategies</a></p></li>
+</ul>
+
+
+<p>4)</p>
+
+<ul>
+<li>Can ODI turn a profit at these prices?
+
+<ul>
+<li>sell at $0.08 per pair</li>
+<li>cost $0.032 per pair + 12k (for first 15 million pairs)</li>
+<li>cost $592,000 to operate</li>
+<li>.048 per pair  in profit</li>
+<li>592,000 / .048 = 12,333,333 lens to break even meaning they need .1% market penetration.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>5)</p>
+
+<ul>
+<li>How would you focus ODI&#8217;s marketing efforts? How would you segment the
+customer base?
+
+<ul>
+<li>345 farms have 20% of america&#8217;s chickens. If they closed 4 of those farms they would be able to able to turn an operating profit.
+
+<ul>
+<li>crowded farms would benefit most from this change and the sales process would be easiest.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Passion without Anger]]></title>
+    <link href="http://adamjonas.com/blog/investing-without-the-anger/"/>
+    <updated>2016-04-01T12:45:00-04:00</updated>
+    <id>http://adamjonas.com/blog/investing-without-the-anger</id>
+    <content type="html"><![CDATA[<p>I am fiery. That&#8217;s euphemistic for being a little man with a short fuse. I&#8217;ve never been the type that can fall asleep in the middle of a movie. If I&#8217;m into it then I&#8217;m into it. I&#8217;m intense. And boy, do I love what I do. I like being a multiplier. My coding skills are middling at best. I wouldn&#8217;t hire me for my team. Not enough raw talent. I like that I can impact the lives of the people on my team on a daily basis. That I can keep them motivated, engaged, fulfilled and happy. I feel like a mechanic that tunes highly customized and specialized machines. I once interviewed with the Yankees as a sports psychologist. Years later I feel like I have a similar, but better job. All that is to say, I take my responsibility to my people very seriously.</p>
+
+<p>My team is filled with a bunch of beginners. More than half of our 12 person team has less than a year of professional coding experience. Everyday I’m humbled by how much they can get done. How fast they develop their skills. Their grit. How they rise to the challenges set in front of them. They find a way time after time.</p>
+
+<p>And so, it is in this setting that I hurt so deeply when others don&#8217;t do their part. I get upset. I&#8217;ve always been impatient by nature. I have extremely (maybe unreasonably) high expectations of others. Given I don&#8217;t often feel that way about my reports, does this mean these emotions are only surfaced when I&#8217;m not in control? Is it trust? What are the limiting factors that enable me to be this understanding, mature, best version of myself?</p>
+
+<p>When someone wrongs me or my people, my blood boils. I can feel my face flush. My chest constricts and breathing shallows. I hope it doesn’t look as bad as it feels, but I&#8217;m sure it must. Superiors, peers, low level employees. I&#8217;m indiscriminate. Forgiveness and empathy exit likely along with a balanced perspective and moderation. When it’s my engineers or a fellow soldier I fight alongside in the trenches, I can see how their misses happened. I can guide them to a better path. A screw up from others is a different story. It triggers a frustration and if done repeatedly, a resentment. How can they hold up their end of the bargain? Do they just not care? My frustration has more than once been interpreted as anger, which is about a worst case scenario. A short angry man in a director role in charge of a 12 person engineering team. How more cliche could I be?</p>
+
+<p>What isn’t clear to me is how I can extend the patience and understanding to others? Empathy, compassion, calmness. I can clearly sort out the problems of my people. Advise them on clear steps forward. And it isn’t like I don’t understand the perspectives of non-technical folks. I’ve only been doing this for three years.</p>
+
+<p>I recently heard that meditation can cause you to change your perspective to see problem situations as less catastrophic events. I think that would be very healthy for me. I tend to obsess on the problems. It tortures me in my sleep. Lack of sleep then alters my mood. Day to day, I shut down around “problem people.” I don’t act myself. I am quiet and withdrawn. This can’t make it better.</p>
+
+<p>So the way forward has to begin with an altered perspective. Working to see the world in a more balanced way. I still want to let my love for what I do bleed through. I think it is my most valuable asset and I believe I have been rewarded for it. But wild swings of mood has never been in high demand and so my path forward is to find a way to take a calm breath and recalibrate when presented with these moments in the future. Maybe it is better self control or maybe given that I keep referring to them as “my people” I can expand who I count in that circle. What I do know is that writing about this early in the morning feeling centered is easy enough. But the real challenge begins as I attempt to self-correct next time the rubber hits the road.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[java basics]]></title>
+    <link href="http://adamjonas.com/blog/java-basics/"/>
+    <updated>2016-03-23T13:49:00-04:00</updated>
+    <id>http://adamjonas.com/blog/java-basics</id>
+    <content type="html"><![CDATA[<h2>Some basics</h2>
+
+<ul>
+<li>Here&#8217;s a basic method signature <code>public static void main(String args[])</code></li>
+<li>The void keyword allows us to create methods which do not return a value. Otherwise in java you need to specific what type the return value must be.</li>
+<li><p><code>public</code> is a Java keyword which declares a member&#8217;s access as public. Public members are visible to all other classes. This means that any other class can access a public field or method. Further, other classes can modify public fields unless the field is declared as final.</p>
+
+<ul>
+<li>A best practice is to give fields <code>private</code> access and reserve <code>public</code> access to only the set of methods and <code>final</code> fields that define the class&#8217; public constants. This helps with encapsulation and information hiding, since it allows you to change the implementation of a class without affecting the consumers who use only the public API of the class.</li>
+</ul>
+</li>
+<li><p>In Java, you need to have a method named <code>main()</code> in at least one class. This method must appear within a class, but it can be any class.</p></li>
+<li><p>ints don&#8217;t evaluate to <code>true</code></p></li>
+</ul>
+
+
+<h2><a href="https://docs.oracle.com/javase/tutorial/java/concepts/interface.html">interfaces</a></h2>
+
+<ul>
+<li>An interface declaration consists of modifiers, the keyword interface, the interface name, a comma-separated list of parent interfaces (if any), and the interface body.</li>
+<li><a href="https://en.wikipedia.org/wiki/Interface-based_programming">Interface programming</a> is an architectural pattern for implementing modular programming at the component level in an object-oriented programming language which does not have a module system.</li>
+<li><p>Implementing an interface allows a class to become more formal about the behavior it promises to provide. Interfaces form a contract between the class and the outside world, and this contract is enforced at build time by the compiler. If your class claims to implement an interface, all methods defined by that interface must appear in its source code before the class will successfully compile.</p></li>
+<li><p><strong>inheritance</strong></p>
+
+<ul>
+<li>A java class cannot extend more than one class at a time so it won&#8217;t provide support for multiple inheritance in classes, but it can extend more than one interface at a time so we java can support multiple inheritances with regard to interfaces.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>HAS-A relationship</h2>
+
+<ul>
+<li>HAS-A means an instance of one class &#8220;has a&#8221; reference to an instance of another class or another instance of same class.</li>
+<li>It is also known as &#8220;composition&#8221; or &#8220;aggregation&#8221;.</li>
+<li>There is no specific keyword to implement HAS-A relationship but mostly we are depended upon &#8220;new&#8221; keyword.</li>
+<li>Composition:
+
+<ul>
+<li>Without existence of container object, if there is no chance of existence of contained objects then container and contained objects are said to be strongly associated and this strong association is known as composition.</li>
+<li>Eg: A &#8220;university&#8221; has several &#8220;departments&#8221;. Without existence of &#8220;university&#8221; there is no chance for the &#8220;departments&#8221; to exist. Hence &#8220;university&#8221; and &#8220;departments&#8221; are strongly associated and this strong association is known as composition.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>IS-A Relationship:</h2>
+
+<ul>
+<li>This refers to inheritance or implementation.</li>
+<li>Expressed using keyword &#8220;extends&#8221;.</li>
+<li>Main advantage is code reusability.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gang of Four - Observer and Mediator Pattern]]></title>
+    <link href="http://adamjonas.com/blog/gang-of-four-observer-and-mediator-pattern/"/>
+    <updated>2016-03-16T13:32:00-04:00</updated>
+    <id>http://adamjonas.com/blog/gang-of-four-observer-and-mediator-pattern</id>
+    <content type="html"><![CDATA[<h2>Observer</h2>
+
+<ul>
+<li>subject is a logical place to keep track of the collection of the observers
+
+<ul>
+<li>the upside is the observers needing to check with the subject via something like long-polling versus the subject notifying the owners</li>
+</ul>
+</li>
+<li>ActiveRecord before_actions and after_actions are a ruby implementation of the observer pattern</li>
+<li>How does JS does this?
+
+<ul>
+<li>functions are first class object, easy to pass around</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Mediator</h2>
+
+<ul>
+<li>what&#8217;s the difference between mediator and observer
+
+<ul>
+<li>Define an object that encapsulates how a set of objects interact.</li>
+<li>Mediator is a little more specific, it avoids having classes communicate directly but instead through a mediator. This helps the Single Responsibility principle by allowing communication to be offloaded to a class that just handles that.</li>
+</ul>
+</li>
+<li>replaces many to many interactions with one to many interactions.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[react]]></title>
+    <link href="http://adamjonas.com/blog/react/"/>
+    <updated>2016-03-10T14:43:00-05:00</updated>
+    <id>http://adamjonas.com/blog/react</id>
+    <content type="html"><![CDATA[<h2>What is it?</h2>
+
+<ul>
+<li>beefed up view layer</li>
+<li>one way data binding -> if state changes the view changes</li>
+<li>creates a virtual DOM</li>
+<li>doesn&#8217;t provide any data management systems like backbone, Alt.js, Redux</li>
+<li>no ajax, use JQuery</li>
+<li>no routing capabilities</li>
+<li>does not work well with JQuery DOM manipulation</li>
+<li>can re-render a lot because of the virtual DOM manipulation</li>
+</ul>
+
+
+<h2>Setup</h2>
+
+<ul>
+<li>Babel</li>
+<li>Gulp - task runner like rake</li>
+<li>Webpack - processes through Babel interpreter and make it useable code</li>
+</ul>
+
+
+<h2>Quirks</h2>
+
+<ul>
+<li>class becomes className since it is a reserved word</li>
+<li>typeSetting</li>
+</ul>
+
+
+<h2>Going forwards</h2>
+
+<ul>
+<li>flux
+
+<ul>
+<li>alt.js</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gang of Four: Proxy and adapter pattern]]></title>
+    <link href="http://adamjonas.com/blog/proxy-and-adapter-pattern/"/>
+    <updated>2016-03-09T13:10:00-05:00</updated>
+    <id>http://adamjonas.com/blog/proxy-and-adapter-pattern</id>
+    <content type="html"><![CDATA[<h2>Proxy</h2>
+
+<ul>
+<li>reverse proxies</li>
+<li>virtual proxy: creates expensive objects on demand. the worker box maybe?
+
+<ul>
+<li>infinite scroll or pagination (these objects exist in Octokit, where there are objects as placeholders but it hasn&#8217;t acutally fetched the data)</li>
+<li>memoization example in the ruby boook</li>
+<li><a href="http://edgeapi.rubyonrails.org/classes/ActiveRecord/Associations/CollectionProxy.html">collection proxy</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Adapter (aka wrapper)</h2>
+
+<ul>
+<li>Fog: cloud storage</li>
+<li>ActiveRecord</li>
+<li>OctokitWrapper is more of a decorator because it adds additional implementation on top of Octokit</li>
+<li>Gateway pattern is an adapter specifically created to talk to external services</li>
+<li>HierarchyBuilder is the adapter</li>
+<li>The key difference between bridge and apater lies in their intents.
+
+<ul>
+<li>Adapter focuses on resolving incompatibilities between two existing interfaces. Bridge, on the other hand, bridges an abstraction and its (potentially numerous) implementations.</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gang of Four: Builder pattern and Singletons]]></title>
+    <link href="http://adamjonas.com/blog/gang-of-four-builder-pattern-and-singletons/"/>
+    <updated>2016-03-02T12:07:00-05:00</updated>
+    <id>http://adamjonas.com/blog/gang-of-four-builder-pattern-and-singletons</id>
+    <content type="html"><![CDATA[<h2>Builder</h2>
+
+<ul>
+<li>Concrete builders: <code>html to markdown</code> and <code>html to json</code>?</li>
+<li>Could we think of a complex cart like this? Like line items of a educational program might compose a composite object by the cart which is the director.
+
+<ul>
+<li>doesn&#8217;t quite match up with subbing in different builders</li>
+</ul>
+</li>
+<li>like strategy pattern, but the way it differs is that it creates a composite object at the end</li>
+<li>but this book is more about the abstract factory, the way this differs is that it the director gives you finer control of the order.</li>
+<li><p>separating out <strong>how</strong> the object is built</p></li>
+<li><p>e.g. Creating enrollments with one time purchases vs recurring subscriptions</p>
+
+<ul>
+<li>client == browser</li>
+<li>director == model ShoppingCart</li>
+<li>builder1 == JobGuaranteeSubscription</li>
+<li>builder2 == NonJobGuaranteeSubscription</li>
+<li><p>result == subscription</p></li>
+<li><p>Build part: slack group, google group, batch</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Singleton</h2>
+
+<ul>
+<li>there is only one instance and so if another part of the code changes it, then you will have shot yourself in the foot</li>
+<li>publishers, which are all singletons, don&#8217;t need more than one, but they could have been classes instead</li>
+<li>dependency injection makes tests way easier</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gang of Four: Decorator and Composition]]></title>
+    <link href="http://adamjonas.com/blog/gang-of-four-decorator-and-composition/"/>
+    <updated>2016-02-17T13:56:00-05:00</updated>
+    <id>http://adamjonas.com/blog/gang-of-four-decorator-and-composition</id>
+    <content type="html"><![CDATA[<h2>Decorator</h2>
+
+<ul>
+<li>OOCSS -> does that fit the pattern?</li>
+<li>&#8220;Changing the skin of an object versus changing its guts&#8221;</li>
+</ul>
+
+
+<h2>Composite</h2>
+
+<ul>
+<li>componenet: parent node</li>
+<li>composite: has children</li>
+<li>leaf: has no children</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gang of Four Chap 1]]></title>
+    <link href="http://adamjonas.com/blog/gang-of-four-chap-1/"/>
+    <updated>2016-02-03T13:41:00-05:00</updated>
+    <id>http://adamjonas.com/blog/gang-of-four-chap-1</id>
+    <content type="html"><![CDATA[<h2>Polymorphism vs duck typing</h2>
+
+<ul>
+<li>from the gospel of <a href="http://stackoverflow.com/a/11502482/1496757">stackoverflow</a> and <a href="http://programmers.stackexchange.com/a/121781">stackexchange</a> and a <a href="https://gist.github.com/46bit/4366791">gist</a></li>
+</ul>
+
+
+<p>  ### Polymorphism</p>
+
+<pre><code>- often hear in the context of subclasses
+</code></pre>
+
+<p>  ### Duck typing</p>
+
+<pre><code>- usually hear in the context of mixins
+- an interface that can interact without having to know what that object is
+</code></pre>
+
+<ul>
+<li>class inheritance versus interface inheritance</li>
+</ul>
+
+
+<h2>Composition vs class inheritance</h2>
+
+<ul>
+<li>Rule of thumb: when behavior spans classes use composition and when limited to derivations of classes then use subclassing</li>
+<li></li>
+</ul>
+
+
+<h2>Run time versus compile time</h2>
+
+<h2>Program to an interface not an implementation</h2>
+
+<ul>
+<li>interface is the behavior</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Memory Pointers]]></title>
+    <link href="http://adamjonas.com/blog/memory-pointers/"/>
+    <updated>2016-01-28T13:54:00-05:00</updated>
+    <id>http://adamjonas.com/blog/memory-pointers</id>
+    <content type="html"><![CDATA[<h3>Random notes from code reading</h3>
+
+<ul>
+<li><p>with 64-bit pointers</p></li>
+<li><p>poro -> an array, for example, is made multiple times. One with items
+of the array, again for indexes of the array, etc.</p></li>
+<li><p>memory swap -> linked lists</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree">red-black tree</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Sparse_array">sparse array</a></p></li>
+<li><p>program restart re-allocates the memory</p></li>
+<li></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Elements of User Experience]]></title>
+    <link href="http://adamjonas.com/blog/the-elements-of-user-experience/"/>
+    <updated>2016-01-19T17:08:00-05:00</updated>
+    <id>http://adamjonas.com/blog/the-elements-of-user-experience</id>
+    <content type="html"><![CDATA[<p>The Five Planes:</p>
+
+<ol>
+<li>The Surface Plane</li>
+<li><p>Sensory Design</p></li>
+<li><p>The Skeleton Plane</p></li>
+<li><p>Interface Design, Navigation Design, and Information Design</p></li>
+<li><p>The Structure Plane</p></li>
+<li><p>Interaction Design and Information Architecture</p></li>
+<li><p>The Scope Plane</p></li>
+<li><p>Functional Specifications and Content Requirements</p></li>
+<li><p>The Strategy Plane</p></li>
+<li>Product Objectives and User Needs</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[cantilever tricks]]></title>
+    <link href="http://adamjonas.com/blog/cantilever-tricks/"/>
+    <updated>2016-01-13T15:45:00-05:00</updated>
+    <id>http://adamjonas.com/blog/cantilever-tricks</id>
+    <content type="html"><![CDATA[<ul>
+<li><p><code>@extend</code> means that the element just get a comment where the extended
+class was previously.</p></li>
+<li><p>inline svg styling is preferred &#8211; think of it like an iframe.</p></li>
+<li><p>gradients are crazy powerful: You can specify that the white area at the bottom starts at 50% from the bottom as specified here &#8211; <code>background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.8) 50%, rgba(255,255,255,1) );</code>. And you can repeat it to make like a rainbow effect. Really cool.</p></li>
+<li><p><a href="https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/">baseline alignment</a></p></li>
+</ul>
+
+
+<h2>SVGs</h2>
+
+<ul>
+<li><a href="https://css-tricks.com/svg-use-with-external-reference-take-2/">Chris Coyer&#8217;s SVG use external references</a></li>
+<li><a href="https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/">svg sprite creation techniques</a></li>
+</ul>
+
+
+<h2>OOCSS</h2>
+
+<ul>
+<li><a href="http://www.stubbornella.org/content/">Nicole Sullivan</a></li>
+</ul>
+
+
+<h2>Floating</h2>
+
+<ul>
+<li>if things are longer than expected -> it will overflow with
+abosolutely positioned</li>
+<li>more predictable behavior for overflow</li>
+</ul>
+
+
+<h2>border box</h2>
+
+<ul>
+<li><a href="http://www.w3schools.com/cssref/css3_pr_box-sizing.asp"><code>box-sizing: border-box</code></a> includes padding but not margin in the width
+measurements.</li>
+</ul>
+
+
+<h2>whitespace</h2>
+
+<ul>
+<li><code>nowrap</code></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CSS restyle]]></title>
+    <link href="http://adamjonas.com/blog/css-restyle/"/>
+    <updated>2016-01-05T10:13:00-05:00</updated>
+    <id>http://adamjonas.com/blog/css-restyle</id>
+    <content type="html"><![CDATA[<p>#</p>
+
+<h2>Block, Element, Modifier (BEM)</h2>
+
+<ul>
+<li><p><a href="https://en.bem.info/">site</a></p></li>
+<li><p>containers and objects are more modular</p></li>
+<li><p>layouts aren&#8217;t reused</p></li>
+<li><p>clearfix issue</p>
+
+<ul>
+<li>using psuedo element hack</li>
+</ul>
+</li>
+<li><p>media element</p>
+
+<ul>
+<li>object in css methodology</li>
+</ul>
+</li>
+<li><p>containers</p>
+
+<ul>
+<li><p>an element that can contain other things -> more container-ish</p>
+
+<ul>
+<li>doesn&#8217;t usually contain other elements</li>
+</ul>
+</li>
+<li><p>any decendents are named-spaced of the parent</p>
+
+<ul>
+<li>e.g. <code>.sample-object</code> and <code>.sample-object__child</code></li>
+<li>child is indicated by double underscore</li>
+<li>you should expect to see similar classes up the DOM
+
+<ul>
+<li>e.g. <code>&lt;div class='level'&gt;&lt;div
+class='level__inner'&gt;&lt;/div&gt;&lt;/div&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>options
+
+<ul>
+<li><code>&lt;div style-color='red'&gt;</code></li>
+<li><code>&lt;dic data-count='16'&gt;</code></li>
+</ul>
+</li>
+<li>extensions
+
+<ul>
+<li>modifiers have double dash</li>
+<li>you should expect to see similar class within the same div
+
+<ul>
+<li>e.g. <code>&lt;div class='module module--island module--island--cap'&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>modules
+
+<ul>
+<li>usually have a head/body/footer</li>
+<li>provides margin around it, background and borders</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>object</p>
+
+<ul>
+<li>an element that doesn&#8217;t contain other elements as opposed to
+objects which are more like containers</li>
+<li>built to fill the width they are in, without explicit width</li>
+<li>maybe a place where <code>!important</code> can live given that other
+elements won&#8217;t live within it.</li>
+<li>expect more legos than objects</li>
+</ul>
+</li>
+<li><p>levels</p>
+
+<ul>
+<li>makes vertical organization of the grids</li>
+<li>they stack on top of eachother - levels of a building</li>
+<li>centers a container in a strip that goes across the page</li>
+</ul>
+</li>
+<li><p>utility class</p>
+
+<ul>
+<li>namespaced with url
+
+<ul>
+<li>with margin on the bottom</li>
+<li><code>utl__m--bxl</code> => utility, margin, bottom extra large</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p> ## ?
+  - how is this going to work with vendors (like icons)
+  - vertical height for grid</p>
+
+<ul>
+<li>user bar is a layout
+
+<ul>
+<li>list horizontal</li>
+</ul>
+</li>
+<li>level for bubble bar</li>
+<li>remove rows and cols from markdown to json parser</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[tcp, udp, http]]></title>
@@ -92,689 +1002,6 @@ Transmission Control Protocol ensures a reliable and ordered delivery of a strea
 
 
 <h2>NFS - Network file system</h2>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Innovator's Dilemma]]></title>
-    <link href="http://adamjonas.com/blog/innovators-dilemma/"/>
-    <updated>2015-06-14T10:43:00-04:00</updated>
-    <id>http://adamjonas.com/blog/innovators-dilemma</id>
-    <content type="html"><![CDATA[<h2>Sustaining v Disruptive Technologies</h2>
-
-<ul>
-<li>sustaining tech are improvements that sustain a company&#8217;s focus, goals, and customers.</li>
-</ul>
-
-
-<h2>Distruptive Products</h2>
-
-<ul>
-<li>Generally these products underperform establish products in mainstream markets.</li>
-<li>Cheaper, simpler, smaller, more convenient. (Dimensions: functionality, reliability, convenience, price)
-
-<ul>
-<li>The attributes that often make the distruptive technology worthless in mainstream markets often become strong selling points in emerging markets.</li>
-</ul>
-</li>
-<li>Do not improve the focus of the company. A market must be developed and new customers found.
-
-<ul>
-<li>Ignore the mainstream market. Find a market that values the disadvantages of the distruptive technology.</li>
-</ul>
-</li>
-<li>Neither the firm nor the customers know of distruptive tech can be used.</li>
-<li>managers need to plan to learn and discover, not plan and execute bc markets are unknowable.</li>
-<li>cannot rely on new breakthrough technology, it is usually combining existing tech in a new way.</li>
-</ul>
-
-
-<h2>Allocating Resources</h2>
-
-<ul>
-<li><p>Being a follower in sustaining technologies is a viable and possibly desirable strategy, but leadership in disruptive technology creates enormous value. (Ch 6)</p></li>
-<li><p>Match the size of the organization to the size of the market. Implant projects aimed at commercializing disruptive innovations small enough to get excited about small market opportunities. (Ch 6)</p>
-
-<ul>
-<li>Johnson and Johnson is comprises of 160 automonous companies each of which can introduce distuptive products.</li>
-</ul>
-</li>
-<li><p>small markets don&#8217;t solve growth needs of big companies. For disruptive technologies, markets are unknowable.</p></li>
-<li><p>look at the performance improvement of new technology. If it is growing faster than market performance demand, then it can be distruptive (it will eventually intersect the market need curve). (Ch 10)</p></li>
-</ul>
-
-
-<h2>Summary</h2>
-
-<ul>
-<li>Managing innovation is a mirror image of managing the resource allocation process.</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[stemming and faceted search]]></title>
-    <link href="http://adamjonas.com/blog/stemming-and-faceted-search/"/>
-    <updated>2015-06-12T09:32:00-04:00</updated>
-    <id>http://adamjonas.com/blog/stemming-and-faceted-search</id>
-    <content type="html"><![CDATA[<h2>Faceted Search</h2>
-
-<p>Search of specific facets like a brand or size for a show search. These are limited set of values, not like a username or ID which could be anything. It&#8217;s like a taxomony search.</p>
-
-<p><a href="http://en.wikipedia.org/wiki/Faceted_search">Wikipedia</a></p>
-
-<h2>Stemming</h2>
-
-<p>Reduces the word to its root. So &#8216;fishes&#8217; and &#8216;fishing&#8217; to &#8216;fish.&#8217;</p>
-
-<p>This algorithm really hasn&#8217;t been around that long. First proposed in &#8216;68 it gained popularity in the 80s.</p>
-
-<p><a href="http://en.wikipedia.org/wiki/Stemming">Wikipedia</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Warren Buffet Bio]]></title>
-    <link href="http://adamjonas.com/blog/warren-buffet-bio/"/>
-    <updated>2015-03-21T13:30:00-04:00</updated>
-    <id>http://adamjonas.com/blog/warren-buffet-bio</id>
-    <content type="html"><![CDATA[<ul>
-<li><p>The cornerstone of Buffet&#8217;s investment philiosphy: Never count on making a good sale. Have a purchase price be so attractive that a mediocre sale gives good results.</p></li>
-<li><p>Book value is equal to that capital that have gone <em>into</em> a business, plus whatever profits been retained. An investoris concerned with how much can be taken out in the future; that is what determines the company&#8217;s worth or <em>intrinsic value</em> as Buffet would call it. Book value is blind to intangibles like brand and so there are opportunities to take aadvantage of the  gap between the discepency of the book value and the instrinsic value.</p></li>
-<li><p>Also read Benjamin Graham, Charlie Munger, &amp; Philip Fisher.</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[omniauth tomfoolery]]></title>
-    <link href="http://adamjonas.com/blog/omniauth-tomfoolery/"/>
-    <updated>2015-03-04T18:01:00-05:00</updated>
-    <id>http://adamjonas.com/blog/omniauth-tomfoolery</id>
-    <content type="html"><![CDATA[<p>Problem: Want to redirect a user who has yet to sign up back to our site after joining Github. Github does not support a url other than login and if you were to click on sign up from there, you would lose the query string parameters.</p>
-
-<p>Resources:
-<a href="https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview#cannot-load-strategy-class">Explicitly set strategy class</a></p>
-
-<p><a href="https://github.com/intridea/omniauth/wiki/Strategy-Contribution-Guide#defining-the-request-phase">Strategy Contribution Guide</a></p>
-
-<p><a href="https://github.com/intridea/omniauth-oauth/blob/43008e42b257d9b7c0b98122cf03ce14b021d782/lib/omniauth/strategies/oauth.rb">oauth strategy</a></p>
-
-<p>I ended up getting the param through, but github noticed and closed the loop. Sad.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[What Working in Professional Baseball Taught Me about Web Development]]></title>
-    <link href="http://adamjonas.com/blog/what-working-in-professional-baseball-taught-me-about-web-development/"/>
-    <updated>2015-01-19T15:32:00-05:00</updated>
-    <id>http://adamjonas.com/blog/what-working-in-professional-baseball-taught-me-about-web-development</id>
-    <content type="html"><![CDATA[<p>Before I was a web developer, I spent my time on baseball fields helping teenagers realize their ultimate dream of playing in the Major Leagues. All of them had talent. Somewhere, someone had seen glimpses of it. Cultivating that talent and turning their potential into performance was the primary purpose of my job. In the vast majority of cases we failed. Now, a few years removed from the game, most of the players I worked with are out of professional baseball. Those who did succeed, found a way to endure the grind and adjusted to the game’s mental and emotional demands.</p>
-
-<p>In 2012, I hit the reset button on my career and became a web developer. I thought I would be leaving baseball forever. However, I found that many of the same traits I saw in successful ball players, even those with very little formal schooling, were some of the very same characteristics I observed in talented engineers. The inability to manage failure, maintain consistency, and learn how to be a professional shattered the dreams of the vast majority players I worked with because they were skills that were so difficult to master.</p>
-
-<p>When I see one of them on TV, it’s hard to not recall the younger, yet unmolded version. It is why I was never the best scout. The baseball scout’s job is to imagine the possibilities. They envision a future version of a gangly youth whose body and mind has matured and whose flaws have been smoothed away to the point they can perform in the Major Leagues. It is a hard job and one that I wish existed in other industries.</p>
-
-<h2>Facing failure</h2>
-
-<p>Successful people, in any field, often struggle with making mistakes. This isn’t surprising, we are wired for bad news. We internalize it. We personalize it. Repeated failure is exhausting. Ball players, whose hitting success rate is at best around 30% are forced to cope. Failure is inherently part of the game.</p>
-
-<p>Resilient players’ confidences seem immune to repeated failure. In fact, failure appears to be inextricably linked to their progress. This makes sense. We improve fastest based on negative feedback. The great thing about that big red error message is that it leaves an obvious clue. Sometimes these hints are more obscure than others, but bugs and errors inform us where to look and where to improve.</p>
-
-<p>Getting repeatedly beaten by the same pitch provides feedback on where hitters need to improve in the same way that a familiar error in our terminal window instructs us where in the code to start looking for our mistake. As humans we learn through repetition and experience. The goal is to not getting beaten again by the same pitch or the same problem.</p>
-
-<p>When I first started learning to program, I focused on never repeating the same mistake twice. This, of course, is impossible but I recorded most my thoughts and posted it online so that I had a searchable collection of my mistakes. The frequency of my posts have waned, but I still find myself searching my blog archives when I know I’ve solved a similar problem in the past. While it was rare to see ball players jot down notes on opponents, most hitting savants have the ability recall previous pitch sequences from past at-bats. Either way, the secret to coping with failure is to reframe it as valuable feedback to be used in the future.</p>
-
-<h2>Consistency</h2>
-
-<p>As developers, we know that consistent performance is important. We construct our dependencies on the most stable parts of our applications. The same goes for managers: when Sarah demonstrates she can be depended on to meet deadlines on a day-to-day, week-to-week, sprint-to-sprint or quarter-to-quarter basis, Sarah can be relied on to build the feature to satisfy the high priority business objective.</p>
-
-<p>Consistency creates the opportunity for measurement. Like the measurement of feature velocity based on a set period of time, comparison of player’s abilities would be worthless without a standard 162 game schedule where the participants play nine innings with nine players on the field. Without a level playing field, comparisons are no longer valid and people can get really upset (see baseball and steroids).</p>
-
-<p>Consistency is difficult because we are wired to break free from it. We are not as perfectly repeatable as the scripts we write. Our brains thrive on novelty. The day-to-day becomes mundane without it. We seek out adventure and variety. We create drama where there is none. We endeavor to learn new things.</p>
-
-<p>But mostly being consistent is just showing up. Being there when products ship and stuff goes down. Career defining highlights are created when people are in the right place at the right time. Crashes on the production server and DEFCON 1 bugs are inevitable but these panic moments create opportunities. Under pressure, acting as you always do makes you a hero.</p>
-
-<p>Derek Jeter’s lifetime batting average was .310. A consummate professional, he hit .308 in the playoffs. Just being yourself when the pressure is on and more eyes are on you makes it seem like you are rising to the occasion. No one is perfect, but bringing your best everyday provides predictability to our human unpredictability and separates the amateurs from the pros.</p>
-
-<h2>Professionalism</h2>
-
-<p>Professional baseball is a child’s game played by overgrown men who make millions of dollars. Make no mistake about it, baseball is a grueling sport. The schedule is relentless. Players arrive at the stadium five-plus hours before the first pitch to weight train, stretch, hit, throw, review scouting reports, etc.</p>
-
-<p>After a three hour game, players are expected to hold court in front of their lockers and answer questions that essentially boil down to, “Tell us about your glaring mistake that you made in front of thousands of people across America.” Each major league team plays 162 games in about 180 days &#8211; not to mention the the month of spring training before the season starts and, if they are lucky, a month of postseason games. Eighty-one of these games in other cities meaning players are switching time zones for weeks on end. The truly blessed ones do this for 20+ years. What the casual fan sees of a player on any given night is the result of thousands of hours of refining subtle movements through exhaustive repetition.</p>
-
-<p>And while we developers don’t enjoy the fame and fortune of Major Leaguers, we get to solve the worlds’ hardest puzzles. The impact of our code has touched the lives of nearly every human on the planet. The drudgery of implementing the vision of others is offset by the natural builder’s high.</p>
-
-<p>Hacker News is littered with discussion on how writing software can crush your soul, but for the lucky ones, the “job” retains its joy. Despite the jeering fans and elusive bugs, there are a blessed few who simply love what they do.</p>
-
-<h2>The Same But Different</h2>
-
-<p>Of course, there are stark differences between baseball and software engineering. Software has been in the hands of laymen for less than a generation and baseball has remained unchanged since before the Civil War. While software’s impact continues to accelerate, we should pause to take breathers and remember that what is old becomes new again. There are lessons to learn everywhere we look and baseball has proven no different for me.</p>
-
-<p>I love what I do. I’ve never been as challenged as when I’m muddling to make sense of a new concept or totally lost in a self-created code mess. The wins and losses I’ve experienced as a developer are like nothing else I’ve experienced as an athlete or a coach. While I’m still a relatively new programmer, my experiences in baseball have transferred as valuable lessons on coping with failures, reliability, and professionalism.</p>
-
-<p>Not all that long ago my work day consisted of spotting the subtle deficiencies in a pitcher’s delivery and the sound of a shortstop’s feet as he ran a 60 yard dash, but when I watch how a junior dev deftly uses her VIM shortcuts or the ease of which she writes a complex SQL query, I’m reminded it’s not so different after all.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[management articles]]></title>
-    <link href="http://adamjonas.com/blog/management-articles/"/>
-    <updated>2014-12-02T14:20:00-05:00</updated>
-    <id>http://adamjonas.com/blog/management-articles</id>
-    <content type="html"><![CDATA[<h2>Etsy</h2>
-
-<ul>
-<li><a href="http://www.businessinsider.com/a-company-with-no-hierarchy-that-makes-more-money-per-employee-than-google-amazon-or-microsoft-2012-4">compensation by peer review</a> is how valve does it</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[distributed teams]]></title>
-    <link href="http://adamjonas.com/blog/distributed-teams/"/>
-    <updated>2014-12-02T14:13:00-05:00</updated>
-    <id>http://adamjonas.com/blog/distributed-teams</id>
-    <content type="html"><![CDATA[<ul>
-<li>Interview with <a href="https://gigaom.com/2012/03/26/tales-from-the-trenches-github/">Chris Wanstrath</a>, Github</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Kris Gale]]></title>
-    <link href="http://adamjonas.com/blog/kris-gale/"/>
-    <updated>2014-12-02T14:03:00-05:00</updated>
-    <id>http://adamjonas.com/blog/kris-gale</id>
-    <content type="html"><![CDATA[<p>This was a <a href="http://research.gigaom.com/2013/11/the-new-visionaries-kris-gale/">great interview</a>.</p>
-
-<h2><a href="http://www.theresponsiveorg.com/manifesto">Responsive Organization</a></h2>
-
-<h2>Evaluation is a busted idea</h2>
-
-<ul>
-<li><p>&#8220;It’s my opinion that the big company evaluation systems we all think of have been broken for a very long time. Long before Drive came out, W. Edwards Deming was practically yelling at the world that performance evaluations were a busted idea.&#8221;</p></li>
-<li><p>&#8220;Remember that annual bonus money is not free money that comes into existence when a company decides to give bonuses. Bonuses are, effectively, a group of people agreeing to give up a percentage of their salary for their managers to redistribute to the people those managers arbitrarily select. What sane group of people would agree to that?&#8221;</p></li>
-<li><p>&#8220;Bonus-tied reviews by the management layer reduce an organization’s ability to change direction, because it incentivizes people to deliver what they’ve committed to, even as new information suggests different work would be more effective.&#8221;</p></li>
-<li><p>&#8220;It’s interesting that everyone asks about the evaluation process. I think that’s a really strong signal that most engineers don’t work in structures or environments that provide enough transparency.&#8221;</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oren Ellenbogen]]></title>
-    <link href="http://adamjonas.com/blog/oren-ellenbogen/"/>
-    <updated>2014-12-02T13:48:00-05:00</updated>
-    <id>http://adamjonas.com/blog/oren-ellenbogen</id>
-    <content type="html"><![CDATA[<p>From the author of <a href="http://leadingsnowflakes.com/">leading snowflakes</a>.</p>
-
-<h2>Q &amp; A</h2>
-
-<p>  Q: do you insulate devs from business objectives so they can concentrate on their task or let them understand the big picture so that they buy in?</p>
-
-<p>  A: Juniors need to be execution machines. KPIs filter down to the technical lead and engineering leads.</p>
-
-<p>  Q: How would you approach evaluations in general?</p>
-
-<p>  A: Need to let go of the idea that evaluations are purely objective. You want them to fit culturally and grow. If they are accomplishing these goals they should be rewarded and if not are way off, they should be fired.</p>
-
-<h2>Notes from discussion with Oren</h2>
-
-<ul>
-<li><p>Learn from your peers:</p>
-
-<ul>
-<li>Make a list of ppl that do things well. Pick their brain on it.</li>
-</ul>
-</li>
-<li><p>Expectations</p>
-
-<ul>
-<li>What are must have qualites and what are deal breakers?</li>
-<li>What makes your tick?
-
-<ul>
-<li>I work best when___</li>
-<li>It annoys me when ___</li>
-</ul>
-</li>
-<li>write down a charge&#8217;s 6 month performance today
-
-<ul>
-<li>if you really have a solid foundation of trust, share it with them</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>Own thoughts</h2>
-
-<p>  Personal preferences are based on YOUR preferences &#8211; I had misinteerpreted what they represented in the book. But why should your charges adjust to you, rather than the other way around?</p>
-
-<p>  The book&#8217;s perspective seems to be for teams little bit larger team than what we have (currently 7) - so I&#8217;m interested in your thoughts on goals for small teams before WE REALLY DON&#8217;T NEED A REPORTING STRUCTURE when things are pretty messy still and people have to do a lot of things (like a startup), but we still want to give inexperienced developers some structure.</p>
-
-<pre><code>- baseline expectations - which we have done and they are soft (passion, 'getting it done', making the 'right' technical decision) - so they are subjective
-- Personal expectations - technical risks, technical growth
-</code></pre>
-
-<p>  This is all pretty soft and that means that performance is pretty subjective which makes it pretty hard to align goals with our future direction or OKRs.</p>
-
-<p>  site speed? user acquisition? We aren&#8217;t close to that.</p>
-
-<p>  If you could pick one and only one metric to systematically increase over time, what metric would have the greatest and most sustainable impact on you and your team’s effectiveness?
-  But these quantitative number really can&#8217;t be all of it&#8230;</p>
-
-<p>  Helping others, code review, their code is breaking seem like more appropriate and directly pertinent to a dev&#8217;s day to day performance.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[circle ci debugging]]></title>
-    <link href="http://adamjonas.com/blog/circle-ci-debugging/"/>
-    <updated>2014-11-26T15:02:00-05:00</updated>
-    <id>http://adamjonas.com/blog/circle-ci-debugging</id>
-    <content type="html"><![CDATA[<p>Chasing a crazy bug on circle ci. Passes locally. Used VNC to drop into circle ci to try to track it down. Really cool to get into that box but it didn&#8217;t shed any light on the error.</p>
-
-<p>The next step was to capture screenshots of what was going on. <a href="https://github.com/mattheworiordan/capybara-screenshot">The capybara-screenshot gem</a> was a perfect fit but the screen shot was not showing the element actually being tested. For some reason it just wasn&#8217;t being displayed. It clicked that the window width was at tablet size meaning the element was being hidden by a media query. Shit.</p>
-
-<p>Resolution:</p>
-
-<ul>
-<li><a href="http://yizeng.me/2014/02/23/how-to-get-window-size-resize-or-maximize-window-using-selenium-webdriver/#ruby-example">Resizing a window to resize</a></li>
-<li><a href="https://code.google.com/p/selenium/wiki/RubyBindings">Selenium Ruby Bindings</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[polymorphic brain hurt]]></title>
-    <link href="http://adamjonas.com/blog/polymorphic-brain-hurt/"/>
-    <updated>2014-08-21T17:38:00-04:00</updated>
-    <id>http://adamjonas.com/blog/polymorphic-brain-hurt</id>
-    <content type="html"><![CDATA[<h2>Polymorphic association from parent to child</h2>
-
-<p>So <a href="http://blog.hasmanythrough.com/2006/4/3/polymorphic-through">this</a> succinctly summed up my issue.</p>
-
-<h2>Deprecated conditions in rails 4</h2>
-
-<p><code>Deprecation warning when using has_many :through :uniq in Rails 4</code></p>
-
-<p>Then once I did get it working with:</p>
-
-<figure class='code'><figcaption><span>Conditions Refactor</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># lesson model</span>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:readmes</span><span class="p">,</span> <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:lesson_contents</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="ss">:readme</span><span class="p">,</span>
-</span><span class='line'>    <span class="ss">:conditions</span> <span class="o">=&gt;</span> <span class="s2">&quot;lesson_contents.content_type = &#39;Readme&#39;&quot;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:labs</span><span class="p">,</span> <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:lesson_contents</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="ss">:lab</span><span class="p">,</span>
-</span><span class='line'>    <span class="ss">:conditions</span> <span class="o">=&gt;</span> <span class="s2">&quot;lesson_contents.content_type = &#39;Lab&#39;&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># stabby lambda</span>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:readmes</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="s2">&quot;content_type = &#39;Readme&#39;&quot;</span><span class="p">)</span> <span class="p">},</span>
-</span><span class='line'>    <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:lesson_contents</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="ss">:readme</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:labs</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="s2">&quot;content_type = &#39;Lab&#39;&quot;</span><span class="p">)</span> <span class="p">},</span> <span class="ss">:through</span> <span class="o">=&gt;</span>
-</span><span class='line'>    <span class="ss">:lesson_contents</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="ss">:lab</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://stackoverflow.com/a/16702101/1496757">Hat Tip</a></p>
-
-<h2>Polymorphic Migration</h2>
-
-<figure class='code'><figcaption><span>Creating a [polymorphic migration](http://stackoverflow.com/a/5534614/1496757)</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">AddImageableToProducts</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Migration</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">up</span>
-</span><span class='line'>    <span class="n">change_table</span> <span class="ss">:products</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
-</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">references</span> <span class="ss">:imageable</span><span class="p">,</span> <span class="ss">:polymorphic</span> <span class="o">=&gt;</span> <span class="kp">true</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[VIM shortcuts]]></title>
-    <link href="http://adamjonas.com/blog/vim-shortcuts/"/>
-    <updated>2014-08-05T10:53:00-04:00</updated>
-    <id>http://adamjonas.com/blog/vim-shortcuts</id>
-    <content type="html"><![CDATA[<h3>File Search</h3>
-
-<ul>
-<li>cntl + p => file search</li>
-</ul>
-
-
-<h3>Nerd Tree</h3>
-
-<ul>
-<li><code>go</code> => preview pane</li>
-</ul>
-
-
-<h3>Run the specs</h3>
-
-<ul>
-<li><code>\r</code> runs the closest spec</li>
-<li><code>\R</code> runs the whole spec suite</li>
-</ul>
-
-
-<h3>cmd + shift + d</h3>
-
-<ul>
-<li><code>control + n</code></li>
-</ul>
-
-
-<h3>vimium for life</h3>
-
-<ul>
-<li><code>\\f</code> + character you are looking for</li>
-<li><code>\\w</code> + word</li>
-<li><code>\\e</code> goes to end of words</li>
-<li>you get it</li>
-</ul>
-
-
-<h3>Go to line</h3>
-
-<ul>
-<li><code>line number + G</code></li>
-</ul>
-
-
-<h3>Tab in or out</h3>
-
-<ul>
-<li><code>&gt;&gt;</code> &amp; <code>&lt;&lt;</code></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Expect]]></title>
-    <link href="http://adamjonas.com/blog/expect/"/>
-    <updated>2014-07-30T11:11:00-04:00</updated>
-    <id>http://adamjonas.com/blog/expect</id>
-    <content type="html"><![CDATA[<h3>Intro commands</h3>
-
-<ul>
-<li><a href="ftp://ftp.sunet.se/pub/lang/tcl/expect/doc/90min-intro-talk.pdf">summary of commands</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[strace]]></title>
-    <link href="http://adamjonas.com/blog/strace/"/>
-    <updated>2014-07-25T13:04:00-04:00</updated>
-    <id>http://adamjonas.com/blog/strace</id>
-    <content type="html"><![CDATA[<h3>Start here:</h3>
-
-<ul>
-<li>Greg Price’s excellent blog post <a href="https://blogs.oracle.com/ksplice/entry/strace_the_sysadmin_s_microscope">Strace – The Sysadmin’s Microscope</a>.</li>
-<li><a href="http://jvns.ca/blog/categories/strace/">Julia Evans</a> has a lot too.</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Intro to Docker]]></title>
-    <link href="http://adamjonas.com/blog/intro-to-docker/"/>
-    <updated>2014-07-25T12:49:00-04:00</updated>
-    <id>http://adamjonas.com/blog/intro-to-docker</id>
-    <content type="html"><![CDATA[<h3>Docker API</h3>
-
-<ul>
-<li><a href="https://github.com/swipely/docker-api">Checkout</a></li>
-</ul>
-
-
-<h3>Relevant Docker Images</h3>
-
-<ul>
-<li><a href="https://github.com/progrium/dokku">dokku</a></li>
-</ul>
-
-
-<h3>Pups</h3>
-
-<ul>
-<li><a href="https://github.com/samsaffron/pups">pups</a> is a small library that allows you to automate the process of creating Unix images</li>
-</ul>
-
-
-<h3>Deployments</h3>
-
-<ul>
-<li><a href="https://coreos.com/">Core OS</a></li>
-</ul>
-
-
-<h3>Discourse on docker</h3>
-
-<ul>
-<li><a href="http://samsaffron.com/archive/2013/11/07/discourse-in-a-docker-container">Sam Saffron explains</a></li>
-</ul>
-
-
-<h3>haproxy</h3>
-
-<ul>
-<li><a href="http://www.haproxy.org/">High Performance Load Balancer</a></li>
-</ul>
-
-
-<h3>Testing</h3>
-
-<ul>
-<li>testing docker seems tough. Puppet Labs <a href="https://github.com/puppetlabs/beaker/blob/master/spec/beaker/hypervisor/docker_spec.rb">gave it a run</a>.</li>
-</ul>
-
-
-<h3>Intro video</h3>
-
-<ul>
-<li><a href="https://www.youtube.com/watch?v=Q5POuMHxW-0">Founder of Docker Inc</a></li>
-</ul>
-
-
-<h3>Commands</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>docker run -p 3000:3000 -t -i dockerregistry.flatironschool.com/ironboard /bin/bash
-</span><span class='line'>source /etc/profile.d/rvm.sh 
-</span><span class='line'>rvm reload
-</span><span class='line'>vi ironboard/config/database.yml
-</span><span class='line'>cd ironboard/
-</span><span class='line'>service postgresql start
-</span><span class='line'>rake db:migrate
-</span><span class='line'>
-</span><span class='line'>docker build -t dockerregistry.flatironschool.com/ironboard .
-</span><span class='line'>docker run -d -p 3000:3000 dockerregistry.flatironschool.com/ironboard</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Notes from <a href="http://vimeo.com/95932458">Docker: The Revolution Will Be Containerized</a></h3>
-
-<ul>
-<li>Containers are just other Linux processes on the host not virtualized calls</li>
-<li>The only performance decrease you see is Linux asking whether it is allowed to access this file - share a kernel with the host</li>
-<li><p>Not nested virtualization</p>
-
-<ul>
-<li>this would be slow</li>
-<li>no device emulation, which makes it faster</li>
-</ul>
-</li>
-<li><p>Can be used as a light weight vm but that&#8217;s not the only way</p></li>
-<li><p><strong><code>Chroot</code> on steroids?</strong></p>
-
-<ul>
-<li><p>(From <a href="http://en.wikipedia.org/wiki/Chroot">Wikipedia</a>) A <code>chroot</code> on Unix operating systems is an operation that changes the apparent root directory for the current running process and its children.</p></li>
-<li><p>A chroot environment can be used to create and host a separate virtualized copy of the software system. This can be useful for:</p>
-
-<ul>
-<li><p><strong>Testing and development</strong></p>
-
-<ul>
-<li>A test environment can be set up in the chroot for software that would otherwise be too risky to deploy on a production system.</li>
-</ul>
-</li>
-<li><p><strong>Dependency control</strong></p>
-
-<ul>
-<li>Software can be developed, built and tested in a chroot populated only with its expected dependencies. This can prevent some kinds of linkage skew that can result from developers building projects with different sets of program libraries installed.</li>
-</ul>
-</li>
-<li><p><strong>Compatibility</strong></p>
-
-<ul>
-<li>Legacy software or software using a different <a href="http://en.wikipedia.org/wiki/Application_binary_interface">application binary interface</a> must sometimes be run in a chroot because their supporting libraries or data files may otherwise clash in name or linkage with those of the host system.</li>
-</ul>
-</li>
-<li><p><strong>Recovery</strong></p>
-
-<ul>
-<li>Should a system be rendered unbootable, a chroot can be used to move back into the damaged environment after bootstrapping from an alternate root file system (such as from installation media, or a Live CD).</li>
-</ul>
-</li>
-<li><p><strong>Privilege separation</strong></p>
-
-<ul>
-<li>Programs are allowed to carry open file descriptors (for files, pipelines and network connections) into the chroot, which can simplify jail design by making it unnecessary to leave working files inside the chroot directory. This also simplifies the common arrangement of running the potentially vulnerable parts of a privileged program in a sandbox, in order to pre-emptively contain a security breach. Note that chroot is not necessarily enough to contain a process with root privileges.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>Cgroups</strong></p>
-
-<ul>
-<li><a href="http://en.wikipedia.org/wiki/Cgroups">Cgroups</a>)is a Linux kernel feature to limit, account, and isolate resource usage (CPU, memory, disk I/O, etc.) of process groups.</li>
-<li>Cgroups also provides namespace isolation to completely isolate application&#8217;s view of the operating environment, including process trees, network, user ids and mounted file systems.</li>
-</ul>
-</li>
-<li><p><strong>LXC (LinuX Containers)</strong></p>
-
-<ul>
-<li><a href="http://en.wikipedia.org/wiki/LXC">LXC</a> provides operating system-level virtualization through a virtual environment that has its own process and network space, instead of creating a full-fledged virtual machine.</li>
-<li>The Linux kernel comprises cgroups for resource isolation (CPU, memory, block I/O, network, etc.) that does not require starting any virtual machines.</li>
-<li>LXC combines cgroups and namespace support to provide an isolated environment for applications. Docker can also use LXC as one of its execution drivers, enabling image management and providing deployment services.</li>
-</ul>
-</li>
-<li><p><strong>CoreOS</strong></p>
-
-<ul>
-<li><a href="http://en.wikipedia.org/wiki/CoreOS">CoreOS</a> is an open source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of applications deployment, security, reliability and scalability. As an operating system, CoreOS provides only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>Linking Multiple Apps</h3>
-
-<ul>
-<li></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Testing With Logan]]></title>
-    <link href="http://adamjonas.com/blog/testing-with-logan/"/>
-    <updated>2014-07-25T12:37:00-04:00</updated>
-    <id>http://adamjonas.com/blog/testing-with-logan</id>
-    <content type="html"><![CDATA[<h3>Receive Message Chain</h3>
-
-<ul>
-<li>In lieu of the depreciated <code>stub_chain</code> there is now <a href="https://github.com/rspec/rspec-mocks/pull/467"><code>receive_message_chain</code></a>.</li>
-</ul>
-
-
-<figure class='code'><figcaption><span>receive_message_chain</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">allow</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive_message_chain</span><span class="p">(</span><span class="ss">:foo</span><span class="p">,</span> <span class="ss">:bar</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
-</span><span class='line'><span class="n">expect</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:bazz</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="sr">/adfads/</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Yielding multiple variables</h3>
-
-<ul>
-<li><code>allow(fake_container).to receive(:attach).and_yield("stdout", "some message\n")</code></li>
-</ul>
-
-
-<h3><code>expect_any_instance_of</code></h3>
-
-<ul>
-<li>expect_any_instance_of(Object).to receive(:subscribe) <a href="http://stackoverflow.com/a/17577942/1496757">isn&#8217;t very well documented</a>, but <a href="http://rubydoc.info/gems/rspec-mocks/RSpec/Mocks/ExampleMethods:expect_any_instance_of">it&#8217;s in there</a>.</li>
-</ul>
-
-
-<h3>Testing Sidekiq</h3>
-
-<ul>
-<li><a href="https://github.com/mperham">Mike Perham</a> did a nice job documenting the <a href="https://github.com/mperham/sidekiq/wiki/Testing">testing options for workers</a>.
-
-<h3>Detecting pending migrations</h3></li>
-<li>A neat little trick to see if there are pending migrations <code>rake db:migrate:status</code>. This must have been built into rails because I see a message every time I haven&#8217;t run a migration and I am running my test suite. It&#8217;s cool nonetheless. <a href="http://stackoverflow.com/questions/1349047/show-pending-migrations-in-rails">Source</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Root Route Takes Parameters]]></title>
-    <link href="http://adamjonas.com/blog/root-route-takes-parameters/"/>
-    <updated>2014-07-16T17:51:00-04:00</updated>
-    <id>http://adamjonas.com/blog/root-route-takes-parameters</id>
-    <content type="html"><![CDATA[<h3>Looking for a hacky way to hard code your root path?</h3>
-
-<p>Look no further: <code>root to: 'controller#action', hello_id: 1, finder_id: 1, laser_id: 1, sharks_id: 4</code> <a href="http://stackoverflow.com/a/22923920/1496757">via</a></p>
 ]]></content>
   </entry>
   
