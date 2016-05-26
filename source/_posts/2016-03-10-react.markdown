@@ -1,0 +1,35 @@
+---
+layout: post
+title: "react"
+date: 2016-03-10 14:43
+comments: true
+categories: js react
+---
+
+## What is it?
+
+  - beefed up view layer
+  - one way data binding -> if state changes the view changes
+  - creates a virtual DOM
+  - doesn't provide any data management systems like backbone, Alt.js, Redux
+  - no ajax, use JQuery
+  - no routing capabilities
+  - does not work well with JQuery DOM manipulation
+  - can re-render a lot because of the virtual DOM manipulation
+
+## Setup
+
+  - Babel
+  - Gulp - task runner like rake
+  - Webpack - processes through Babel interpreter and make it useable code
+
+## Quirks
+
+  - class becomes className since it is a reserved word
+  - typeSetting
+
+## Going forwards
+
+  - flux
+    - alt.js
+

@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Passion without Anger"
+date: 2016-04-01 12:45
+comments: true
+categories: management personal
+---
+
+I am fiery. That's euphemistic for being a little man with a short fuse. I've never been the type that can fall asleep in the middle of a movie. If I'm into it then I'm into it. I'm intense. And boy, do I love what I do. I like being a multiplier. My coding skills are middling at best. I wouldn't hire me for my team. Not enough raw talent. I like that I can impact the lives of the people on my team on a daily basis. That I can keep them motivated, engaged, fulfilled and happy. I feel like a mechanic that tunes highly customized and specialized machines. I once interviewed with the Yankees as a sports psychologist. Years later I feel like I have a similar, but better job. All that is to say, I take my responsibility to my people very seriously. 
+
+My team is filled with a bunch of beginners. More than half of our 12 person team has less than a year of professional coding experience. Everyday I’m humbled by how much they can get done. How fast they develop their skills. Their grit. How they rise to the challenges set in front of them. They find a way time after time.
+
+And so, it is in this setting that I hurt so deeply when others don't do their part. I get upset. I've always been impatient by nature. I have extremely (maybe unreasonably) high expectations of others. Given I don't often feel that way about my reports, does this mean these emotions are only surfaced when I'm not in control? Is it trust? What are the limiting factors that enable me to be this understanding, mature, best version of myself?
+
+When someone wrongs me or my people, my blood boils. I can feel my face flush. My chest constricts and breathing shallows. I hope it doesn’t look as bad as it feels, but I'm sure it must. Superiors, peers, low level employees. I'm indiscriminate. Forgiveness and empathy exit likely along with a balanced perspective and moderation. When it’s my engineers or a fellow soldier I fight alongside in the trenches, I can see how their misses happened. I can guide them to a better path. A screw up from others is a different story. It triggers a frustration and if done repeatedly, a resentment. How can they hold up their end of the bargain? Do they just not care? My frustration has more than once been interpreted as anger, which is about a worst case scenario. A short angry man in a director role in charge of a 12 person engineering team. How more cliche could I be?
+
+What isn’t clear to me is how I can extend the patience and understanding to others? Empathy, compassion, calmness. I can clearly sort out the problems of my people. Advise them on clear steps forward. And it isn’t like I don’t understand the perspectives of non-technical folks. I’ve only been doing this for three years.
+
+I recently heard that meditation can cause you to change your perspective to see problem situations as less catastrophic events. I think that would be very healthy for me. I tend to obsess on the problems. It tortures me in my sleep. Lack of sleep then alters my mood. Day to day, I shut down around “problem people.” I don’t act myself. I am quiet and withdrawn. This can’t make it better.
+
+So the way forward has to begin with an altered perspective. Working to see the world in a more balanced way. I still want to let my love for what I do bleed through. I think it is my most valuable asset and I believe I have been rewarded for it. But wild swings of mood has never been in high demand and so my path forward is to find a way to take a calm breath and recalibrate when presented with these moments in the future. Maybe it is better self control or maybe given that I keep referring to them as “my people” I can expand who I count in that circle. What I do know is that writing about this early in the morning feeling centered is easy enough. But the real challenge begins as I attempt to self-correct next time the rubber hits the road.
