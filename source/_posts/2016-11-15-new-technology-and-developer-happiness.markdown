@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "New Technology and Developer Happiness"
-date: 2016-05-15 12:24
+date: 2016-11-15 12:24
 comments: true
 categories: management
 ---

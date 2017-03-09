@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My take on maker versus manager"
-date: 2016-04-28 12:01
+date: 2016-08-28 12:01
 comments: true
 categories: management
 ---

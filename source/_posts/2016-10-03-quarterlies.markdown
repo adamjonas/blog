@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Quarterlies"
-date: 2016-04-22 11:54
+date: 2016-10-03 11:54
 comments: true
 categories: management
 ---

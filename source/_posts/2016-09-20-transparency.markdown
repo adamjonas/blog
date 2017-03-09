@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Transparency"
-date: 2016-05-20 12:21
+date: 2016-09-20 12:21
 comments: true
 categories: management
 ---

@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Working to Make Myself Obsolete"
-date: 2016-05-26 12:23
+date: 2016-11-26 12:23
 comments: true
-categories: 
+categories: management
 ---
 
-When I told my mother, a executive of 30 years mostly spent at [Crabtree and Evelyn](http://www.crabtree-evelyn.com/), about my goal to make myself obsolete she flipped.
+When I told my mother, an executive of 30 years mostly spent at [Crabtree and Evelyn](http://www.crabtree-evelyn.com/), about my goal to make myself obsolete she flipped.
 
-“You are working yourself out your job,” she warned. “You need to be doing the opposite.”
+"You are working yourself out of your job," she warned. "You need to be doing the opposite."
 
 My mom fought through sexism for decades to maintain her influential role at the top of the hierarchy. My mother is a scrapper and she clearly had to defend her territory. From her advice on management issues however, it seems pretty clear to me she probably never got ahead of the tsunami of work that consumes managers’ everyday lives. I mostly observe managers fire fighting and doing implementation. This is a trap. We all want to feel important, but if managers are the single point of failure, things will fall apart. 
 
