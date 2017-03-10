@@ -9,10 +9,10 @@ categories: databases
 Brad Urani @confoo
 
 ### ACID ->
-atomicity: all or nothing. If one of 3 writes fails it rolls it back
-Consistency:
-Isolation:
-Durability: DB survives
+  - atomicity: all or nothing. If one of 3 writes fails it rolls it back
+  - Consistency:
+  - Isolation:
+  - Durability: DB survives
 
   - no-sql aren't faster because of algorithms, they are faster because they did it because they did away with the guarantees
 
