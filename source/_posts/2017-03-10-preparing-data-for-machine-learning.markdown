@@ -67,7 +67,7 @@ categories: machine-learning
     lower differences like temperatute
       - create ranges -> normalizing, standardizing
 
-## Concolusion
+## Conclusion
   - Training data versus test data
     - subject matter experts become important as they need to undetr
     - tumors -> which do you want, one with more false positives and one
