@@ -9,7 +9,7 @@
   <meta name="author" content="Adam Jonas">
 
   
-  <meta name="description" content="This was a great interview. Responsive Organization Evaluation is a busted idea &#8220;It’s my opinion that the big company evaluation systems we all &hellip;">
+  <meta name="description" content="Etsy compensation by peer review is how valve does it ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,90 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/management-articles/">Management Articles</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-02T14:20:00-05:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Etsy</h2>
+
+<ul>
+<li><a href="http://www.businessinsider.com/a-company-with-no-hierarchy-that-makes-more-money-per-employee-than-google-amazon-or-microsoft-2012-4">compensation by peer review</a> is how valve does it</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/distributed-teams/">Distributed Teams</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-02T14:13:00-05:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>Interview with <a href="https://gigaom.com/2012/03/26/tales-from-the-trenches-github/">Chris Wanstrath</a>, Github</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -756,120 +840,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/testing-with-logan/">Testing With Logan</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-25T12:37:00-04:00" pubdate data-updated="true">Jul 25<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Receive Message Chain</h3>
-
-<ul>
-<li>In lieu of the depreciated <code>stub_chain</code> there is now <a href="https://github.com/rspec/rspec-mocks/pull/467"><code>receive_message_chain</code></a>.</li>
-</ul>
-
-
-<figure class='code'><figcaption><span>receive_message_chain</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">allow</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive_message_chain</span><span class="p">(</span><span class="ss">:foo</span><span class="p">,</span> <span class="ss">:bar</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
-</span><span class='line'><span class="n">expect</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:bazz</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="sr">/adfads/</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Yielding multiple variables</h3>
-
-<ul>
-<li><code>allow(fake_container).to receive(:attach).and_yield("stdout", "some message\n")</code></li>
-</ul>
-
-
-<h3><code>expect_any_instance_of</code></h3>
-
-<ul>
-<li>expect_any_instance_of(Object).to receive(:subscribe) <a href="http://stackoverflow.com/a/17577942/1496757">isn&#8217;t very well documented</a>, but <a href="http://rubydoc.info/gems/rspec-mocks/RSpec/Mocks/ExampleMethods:expect_any_instance_of">it&#8217;s in there</a>.</li>
-</ul>
-
-
-<h3>Testing Sidekiq</h3>
-
-<ul>
-<li><a href="https://github.com/mperham">Mike Perham</a> did a nice job documenting the <a href="https://github.com/mperham/sidekiq/wiki/Testing">testing options for workers</a>.
-
-<h3>Detecting pending migrations</h3></li>
-<li>A neat little trick to see if there are pending migrations <code>rake db:migrate:status</code>. This must have been built into rails because I see a message every time I haven&#8217;t run a migration and I am running my test suite. It&#8217;s cool nonetheless. <a href="http://stackoverflow.com/questions/1349047/show-pending-migrations-in-rails">Source</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/root-route-takes-parameters/">Root Route Takes Parameters</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-16T17:51:00-04:00" pubdate data-updated="true">Jul 16<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Looking for a hacky way to hard code your root path?</h3>
-
-<p>Look no further: <code>root to: 'controller#action', hello_id: 1, finder_id: 1, laser_id: 1, sharks_id: 4</code> <a href="http://stackoverflow.com/a/22923920/1496757">via</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -887,6 +857,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/elastic-search/">Elastic Search</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/preparing-data-for-machine-learning/">Preparing Data for Machine Learning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/the-soul-in-the-machine-developing-for-humans/">The Soul in The Machine - Developing for Humans</a>
       </li>
     
@@ -896,14 +874,6 @@
     
       <li class="post">
         <a href="/blog/7-righteous-fights/">7 righteous fights</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/databases-with-brad-urani/">Databases with Brad Urani</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/working-to-make-myself-obsolete/">Working to Make Myself Obsolete</a>
       </li>
     
   </ul>

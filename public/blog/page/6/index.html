@@ -9,7 +9,9 @@
   <meta name="author" content="Adam Jonas">
 
   
-  <meta name="description" content="Webmock to disable net connections Just toss it in the spec_helper Note that I had to use WebMock.disable_net_connect!(:allow_localhost =&gt; true) &hellip;">
+  <meta name="description" content="Receive Message Chain In lieu of the depreciated stub_chain there is now receive_message_chain. receive_message_chain1
+2
+allow(obj).to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +88,120 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/testing-with-logan/">Testing With Logan</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-25T12:37:00-04:00" pubdate data-updated="true">Jul 25<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Receive Message Chain</h3>
+
+<ul>
+<li>In lieu of the depreciated <code>stub_chain</code> there is now <a href="https://github.com/rspec/rspec-mocks/pull/467"><code>receive_message_chain</code></a>.</li>
+</ul>
+
+
+<figure class='code'><figcaption><span>receive_message_chain</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">allow</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive_message_chain</span><span class="p">(</span><span class="ss">:foo</span><span class="p">,</span> <span class="ss">:bar</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
+</span><span class='line'><span class="n">expect</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:bazz</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="sr">/adfads/</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Yielding multiple variables</h3>
+
+<ul>
+<li><code>allow(fake_container).to receive(:attach).and_yield("stdout", "some message\n")</code></li>
+</ul>
+
+
+<h3><code>expect_any_instance_of</code></h3>
+
+<ul>
+<li>expect_any_instance_of(Object).to receive(:subscribe) <a href="http://stackoverflow.com/a/17577942/1496757">isn&#8217;t very well documented</a>, but <a href="http://rubydoc.info/gems/rspec-mocks/RSpec/Mocks/ExampleMethods:expect_any_instance_of">it&#8217;s in there</a>.</li>
+</ul>
+
+
+<h3>Testing Sidekiq</h3>
+
+<ul>
+<li><a href="https://github.com/mperham">Mike Perham</a> did a nice job documenting the <a href="https://github.com/mperham/sidekiq/wiki/Testing">testing options for workers</a>.
+
+<h3>Detecting pending migrations</h3></li>
+<li>A neat little trick to see if there are pending migrations <code>rake db:migrate:status</code>. This must have been built into rails because I see a message every time I haven&#8217;t run a migration and I am running my test suite. It&#8217;s cool nonetheless. <a href="http://stackoverflow.com/questions/1349047/show-pending-migrations-in-rails">Source</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/root-route-takes-parameters/">Root Route Takes Parameters</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-16T17:51:00-04:00" pubdate data-updated="true">Jul 16<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Looking for a hacky way to hard code your root path?</h3>
+
+<p>Look no further: <code>root to: 'controller#action', hello_id: 1, finder_id: 1, laser_id: 1, sharks_id: 4</code> <a href="http://stackoverflow.com/a/22923920/1496757">via</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -626,236 +742,6 @@ T - <strong>Testable</strong>  The user story or its related description must pr
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/feyonce/">Feyonce</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-27T15:43:00-04:00" pubdate data-updated="true">Mar 27<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>cancan&#8217;s bitmask</h2>
-
-<ul>
-<li><p><a href="https://github.com/ryanb/cancan/issues/145">bitmask</a></p></li>
-<li><p>by the way, it appears that cancan has been abandoned. We ended up rolling out our authorization.</p></li>
-</ul>
-
-
-<h2>devise</h2>
-
-<ul>
-<li>You can override the default behaviour by creating an after_sign_in_path_for <a href="https://github.com/plataformatec/devise/wiki/How-To%3A-Redirect-to-a-specific-page-on-successful-sign-in-and-sign-out">via</a></li>
-</ul>
-
-
-<h3>Switch to omniauth</h3>
-
-<ul>
-<li>we made a major overhaul by switching to omniauth rather than using the devise email &amp; password.
-
-<ul>
-<li>As per the <a href="https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview#using-omniauth-without-other-authentications">omniauth wiki</a> I needed to rebuild many of the paths that devise had created for us via the <code>registerable</code> and <code>Database Authenticatable</code> modules and reconfigure the appropriate controllers as well.</li>
-<li>To its credit, the <code>Devise::TestHelpers, type: :controller</code> held up through the transition, which was a big help.</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>Bundle clean is the jam</h3>
-
-<ul>
-<li><code>bundle clean --force</code></li>
-<li><code>bundle update</code>
-Saved my @ss.</li>
-</ul>
-
-
-<h3>Before block versus let in rspec</h3>
-
-<ul>
-<li>use <code>let</code> to define all of the dependent objects, and to use <code>before do</code> to setup needed configuration or any mocks/stubs needed by the examples. <a href="http://stackoverflow.com/a/5359979/1496757">via the comments section</a></li>
-</ul>
-
-
-<h3>Transient Factory Girl Properties</h3>
-
-<p>I needed a way to pass in some parameters into my factory. Enter transient properties.</p>
-
-<ul>
-<li><a href="http://robots.thoughtbot.com/factory-girl-2-2-your-new-best-friend">This helped</a></li>
-<li><a href="http://stackoverflow.com/a/9693284/1496757">And</a></li>
-<li><a href="http://rubydoc.info/gems/factory_girl/2.3.2/file/GETTING_STARTED.md#Transient_Attributes">And the docs</a></li>
-</ul>
-
-
-<figure class='code'><figcaption><span>The Eventual Code</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">factory</span> <span class="ss">:track_with_lessons</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">ignore</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">lesson_count</span> <span class="mi">3</span>
-</span><span class='line'>    <span class="n">topic_count</span> <span class="mi">2</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">after</span><span class="p">(</span><span class="ss">:create</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">track</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">|</span>
-</span><span class='line'>    <span class="n">evaluator</span><span class="o">.</span><span class="n">topic_count</span><span class="o">.</span><span class="n">times</span> <span class="p">{</span> <span class="n">track</span><span class="o">.</span><span class="n">add_topic</span><span class="p">(</span><span class="n">create</span><span class="p">(</span><span class="ss">:topic_with_lessons</span><span class="p">,</span> <span class="n">lesson_count</span><span class="p">:</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">lesson_count</span><span class="p">))}</span>
-</span><span class='line'>    <span class="n">track</span><span class="o">.</span><span class="n">save!</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>A gotcha: The <a href="https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md#transient-attributes">getting started readme</a> was outdated so I was trying to use <code>transient do</code> which was not working. It appears that this will be fixed in the next release&#8230;</p>
-
-<h3>Capybara within block</h3>
-
-<p>When searching for an element with a div like <code>within('div#first.drawer') do</code> it truly means within, not like this can be the same element you are looking for, it has to be nested inside this element.</p>
-
-<h3>Testing with JSON</h3>
-
-<p><a href="http://kakubei.blogspot.com/2013/05/testing-controller-with-json-data-draft.html">Found this</a> to be a good place to start but I couldn&#8217;t get his method to actually work.</p>
-
-<figure class='code'><figcaption><span>What he did</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">it</span> <span class="s2">&quot;updates empty summary field&quot;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="vi">@incoming_params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span> <span class="o">=</span> <span class="vi">@dvd</span><span class="o">.</span><span class="n">id</span>
-</span><span class='line'>  <span class="vi">@incoming_params</span><span class="o">[</span><span class="ss">:summary</span><span class="o">]</span> <span class="o">=</span>  <span class="s1">&#39;some summary&#39;</span>
-</span><span class='line'>  <span class="n">post</span> <span class="s1">&#39;entry/update&#39;</span><span class="p">,</span> <span class="vi">@incoming_params</span><span class="o">.</span><span class="n">to_json</span>
-</span><span class='line'>  <span class="vi">@entry</span><span class="o">.</span><span class="n">reload</span>
-</span><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="vi">@entry</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="s1">&#39;some summary&#39;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>This is what worked for me</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="s1">&#39;POST #topic_order&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">it</span> <span class="s1">&#39;saves a new topic order&#39;</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">sign_in_teacher</span>
-</span><span class='line'>    <span class="n">track</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="ss">:track_with_lessons</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">original_order</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">topic_order</span>
-</span><span class='line'>    <span class="n">post</span> <span class="ss">:topic_order</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="o">=&gt;</span> <span class="p">{</span><span class="s2">&quot;topic_order&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">track</span><span class="o">.</span><span class="n">topic_order</span><span class="o">.</span><span class="n">last</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">track</span><span class="o">.</span><span class="n">topic_order</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;track_id&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">track</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span> <span class="nb">format</span><span class="p">:</span> <span class="ss">:json</span>
-</span><span class='line'>    <span class="n">track</span><span class="o">.</span><span class="n">reload</span>
-</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">topic_order</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="n">original_order</span><span class="o">.</span><span class="n">reverse</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/service-objects-versus-concerns/">Service Objects Versus Concerns</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-25T15:03:00-05:00" pubdate data-updated="true">Feb 25<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/blog/service-objects/">I wrote this</a> last May. Obviously, <a href="https://github.com/scottcreynolds">@scottcreynolds</a> doesn&#8217;t think it sunk in.</p>
-
-<p>We were writing a URL sanitizer that stripped the user&#8217;s URL input of <code>http://</code> and <code>www</code> to store in the DB. Because we were using it for multiple models. I had viewed this &#8220;stipper&#8221; method as a behavior and thus had thought it belonged in the the DHH blessed concerns folder.</p>
-
-<p>Scott disagreed:</p>
-
-<blockquote><p>A concern or mixin should describe a <strong>behavior</strong> that is being given to the object. That&#8217;s the &#8220;able&#8221; nomenclature. A behavior is something like &#8220;it can support tags&#8221; or &#8220;it can be authenticated with a devise token&#8221;.</p></blockquote>
-
-<p>What I should have seen was this is a utility method. He writes:</p>
-
-<blockquote><p>What was being created here is a utility or service method, intended to be used across any entity in the system that chooses to sanitize a url. This is not a behavior that the object has. Yes, you could go so far as to say &#8220;this object can sanitize its urls&#8221; but that&#8217;s a bit of semantic gymnastics when what we&#8217;re really describing is a <strong>service object</strong> - something that provides a service to any part of the system that requires it. In this case, scrubbing user input.</p></blockquote>
-
-<p>Something that may have helped me futher understand this was thinking about who was responsible for this sanitization. Is the Event object responsible for url sanitization?</p>
-
-<blockquote><p>It might seem like a fine hair to split, but if we examine further, we see that we weren&#8217;t really adding a common behavior to the <code>event</code> and <code>admin_user</code> classes.</p>
-
-<p>The <code>parseable</code> module as designed only handled the case where the thing it was being mixed into had a field called <code>website</code>. Including it in <code>event</code> would have done absolutely nothing because that field doesn&#8217;t exist. What an <code>event</code> does have, however, is a <code>registration_link</code>. Already, we can see that we haven&#8217;t truly identified a common <em>behavior</em> so much as a common <em>need</em> - hence a service object.</p>
-
-<p>Finally, just in the naming we can tell that we&#8217;re not really describing what we mean. If a class includes a module <code>parseable</code>, that include line, in English, reads <code>an admin user is parseable</code>. To me that means something significantly different than <code>before save, strip some characters out of a field</code>. The module being described didn&#8217;t do what it claimed to do by its name.</p></blockquote>
-
-<p>These things seem small, but they&#8217;re extremely important to care about because code bases grow and all you have in a dynamic language is your tests and your naming to help you understand the system a year from now. I could show you a rails project I just came into where no care was given to naming and structure, and you could spend days following the labyrinth of modules and classes and end up hoping the Minotaur finds you and eats you and spares you the hassle of figuring out what&#8217;s going on.</p>
-
-<p>So in short, use concerns when extracting common behavior (active record finders, authentication, etc). Use service objects when extracting common needs.</p>
-
-<p>Finally, a note on tests. It&#8217;s great we&#8217;re doing the cucumber, and doing it well, but we still need tests at model and controller levels too. If you make a new class/module it should have a test file and some tests.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -873,6 +759,14 @@ Saved my @ss.</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/elastic-search/">Elastic Search</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/preparing-data-for-machine-learning/">Preparing Data for Machine Learning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/the-soul-in-the-machine-developing-for-humans/">The Soul in The Machine - Developing for Humans</a>
       </li>
     
@@ -882,14 +776,6 @@ Saved my @ss.</li>
     
       <li class="post">
         <a href="/blog/7-righteous-fights/">7 righteous fights</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/databases-with-brad-urani/">Databases with Brad Urani</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/working-to-make-myself-obsolete/">Working to Make Myself Obsolete</a>
       </li>
     
   </ul>

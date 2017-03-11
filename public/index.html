@@ -9,8 +9,8 @@
   <meta name="author" content="Adam Jonas">
 
   
-  <meta name="description" content="With Christian Heilmann Machines vs. Humans machines don&#8217;t get tired or make mistake as they fatigue
-law is boring and machines don&#8217;t get &hellip;">
+  <meta name="description" content="Intro &#8220;elastic search is full text sreach engine, non-relational DB, analytics engine&#8221; has clustering and managed over REST
+Suggest &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,273 @@ law is boring and machines don&#8217;t get &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/elastic-search/">Elastic Search</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-10T11:38:00-05:00" pubdate data-updated="true">Mar 10<span>th</span>, 2017</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Intro</h2>
+
+<p>&#8220;elastic search is full text sreach engine, non-relational DB, analytics engine&#8221;</p>
+
+<ul>
+<li>has clustering and managed over REST</li>
+<li><p>Suggest Explicit mapping</p></li>
+<li><p>keywords -> non-analyzed data</p></li>
+<li><p>full text -> analyzed</p></li>
+<li><p>filters -> will need <code>bool</code> then <code>filters</code></p></li>
+</ul>
+
+
+<h2>relevance -> score meta data field for document match</h2>
+
+<ul>
+<li>things are ranked</li>
+<li>filters are faster and don&#8217;t have relevance (so if you don&#8217;t care, go with fiters)</li>
+<li>can boost relevance</li>
+</ul>
+
+
+<h2>multi-index multi-type</h2>
+
+<ul>
+<li>lots of power</li>
+</ul>
+
+
+<h2>Aggregation -> group by on steroids</h2>
+
+<ul>
+<li>SQL: group by the bucket</li>
+<li>aggregator -> can do nested group by and data retrieval</li>
+</ul>
+
+
+<h2>Managing elastic search</h2>
+
+<ul>
+<li>clustering
+
+<ul>
+<li>odd number of nodes bigger than 1
+
+<ul>
+<li>3 shards and replication</li>
+<li>a third node can shuffle the shards and the replicas</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>ELK Stack</h2>
+
+<ul>
+<li>elastic search, logstash, and kubana</li>
+<li>logstash
+
+<ul>
+<li>want to parse and stash log data</li>
+</ul>
+</li>
+<li>kubana
+
+<ul>
+<li>front end visualizer</li>
+</ul>
+</li>
+<li>now beats added -> lightweight, written in go -> for shipping</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/preparing-data-for-machine-learning/">Preparing Data for Machine Learning</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-10T10:02:00-05:00" pubdate data-updated="true">Mar 10<span>th</span>, 2017</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Why machine learning - you can predict the future</h2>
+
+<ul>
+<li>Explosion of data, more available than ever</li>
+<li>sheer processing power available at a reasonable price point</li>
+</ul>
+
+
+<h2>Data Preparation Tools</h2>
+
+<ul>
+<li>Rstudio -> data prep and execute the machine learning</li>
+<li>jupyter notebooks -> python in the cloud</li>
+<li>excel -> stick with the tools you know</li>
+<li>azure machine learning studio</li>
+<li>scikit learn (competitor to r studio) for python</li>
+<li>relational database tools (SQL queries)</li>
+<li>sed / awk</li>
+<li>python, r, sql most common languages to clean up data</li>
+</ul>
+
+
+<h2>Data Cleaning</h2>
+
+<ul>
+<li>missing values in data or repeating values in data (blanks, null,
+n/a, unknown, 999999)</li>
+<li>what&#8217;s your business goal?
+
+<ul>
+<li>SPCA - can you help us predict what animals won&#8217;t get adopted?</li>
+<li>got enough data to be significant, you can delete rows -> not
+always an option</li>
+</ul>
+</li>
+<li>can substitute a specific value (can go with a worst case
+scenario)</li>
+<li>fill forward and fill backwards based on the last value we read ->
+going to have to write code</li>
+<li>R is.na()</li>
+<li><p>python pandas.fillna(), pandas.isnull()</p></li>
+<li><p>excel tips -></p>
+
+<ul>
+<li>select individual columns, go to special, select blanks (will
+select every blank cell) and you can enter a value</li>
+</ul>
+</li>
+<li><p>repeated values</p>
+
+<ul>
+<li>causes a bias in the data</li>
+<li>duplicate row vs duplicate IDs</li>
+<li>r duplicated()</li>
+<li>python dataframe.drop_duplicates</li>
+<li>SQL DISTINCT or correctlated queries</li>
+<li>correlated subquery -> if the rows are the same but the IDs are different when you find
+two identitical records and delete the one with the lower ID
+number</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Data Transformation</h2>
+
+<ul>
+<li>Decomposition
+
+<ul>
+<li>the more you know about the data, the better</li>
+<li>one column represents two or more values (like addresses lumped
+together and finding the city and state)</li>
+<li>return a 1 or 0 to represented spayed and nuetered</li>
+</ul>
+</li>
+<li><p>Aggregation</p>
+
+<ul>
+<li>how many copies of different books to keep in stock?</li>
+<li>don&#8217;t want the day it was sold, want total number of books sold
+per wk/mon x date</li>
+<li>select count(*) from sales group by (books sold per period)</li>
+</ul>
+</li>
+<li><p>Scaling</p>
+
+<ul>
+<li>predict how long a patient admitted the flu will need to stay in
+the hospital</li>
+<li>because the age has a wider varience in age you don&#8217;t see the
+lower differences like temperatute
+
+<ul>
+<li>create ranges -> normalizing, standardizing</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Concolusion</h2>
+
+<ul>
+<li><p>Training data versus test data</p>
+
+<ul>
+<li>subject matter experts become important as they need to undetr</li>
+<li>tumors -> which do you want, one with more false positives and one
+with more false negatives</li>
+</ul>
+</li>
+<li><p>slides at <code>aka.ms/confooml</code></p></li>
+<li>data science and machine learning essentials</li>
+<li>cleaning data with python</li>
+<li>building your first machine learning experiment</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -821,98 +1088,6 @@ intermediary</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/when-i-didnt-see-it-in-the-interview/">When I Didn&#8217;t See It in the Interview</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-09-28T11:46:00-04:00" pubdate data-updated="true">Sep 28<span>th</span>, 2016</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Raw intellect isn’t enough. Just like product market fit we need to see person-job fit. How can we test it? Good people with drive and patience for change and a healthy sense of duty seem to be able to adjust to nearly any job for a short period. We can all do any job for six months and knock it out of the park.</p>
-
-<p>I think about a particular interview where I left so excited about the candidate. They were quirky, but thoughtfully engaged. They grasped what we did here and why it was important. They thirsted for new knowledge and challenge. They were young and ambitious. No work experience of any kind.</p>
-
-<p>But when he arrived it was an utter let down. The focus wasn’t on getting as good as possible as quickly as possible but rather maintaining balance at all times. Never pushing himself to be in the trenches with his brethren in times as the pressure bore down on them or let the passion take him deep into the night when we feel the torment of an unfinished idea demanding completion.</p>
-
-<p>All the raw materials were there. What did I miss? If we hire someone with no work history, does the onboarding process need to be different? Do we need to teach them not only how to do the job but also how to be an employee? What expectations did we set to encourage him to rise to be great?</p>
-
-<p>I cannot move past my disappointment. I signed off on him. I had high expectations. Though not my direct report, I provided course corrections. As time continues to march on the disappointment builds. I notice the small improvements but never the grand about-face for which I hold out hope. That one day when he will wake up, open his eyes to observe and finally be dissatisfied with his mediocrity.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/transparency/">Transparency</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-09-20T12:21:00-04:00" pubdate data-updated="true">Sep 20<span>th</span>, 2016</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Transparency begets trust and trust begets transparency. It isn’t easy and it feels unsafe to bare your process and sometimes soul. Talking about the thing you least want to talk about has been something that has helped our team address the weirdness that exists between our people and processes. But it wasn’t always like this. We used to ignore or only privately address what needed to be discussed the most.</p>
-
-<p>A few months ago, during a period when a lot of new hires were starting and suffering from imposter syndrome, I tried to reinforce our culture of transparency and honesty by telling my team that I wouldn’t hire myself for our team. I assume that isn’t something that most managers admit and I explained my rationale. I’m not a strong enough coder to hang with them. I don’t complement the personalities we have. I don’t bring enough of a unique perspective as an individual contributor. It pains me to even write this, let alone tell my teammates that this is how I feel. Doing this led to a bunch of other team members describing their version of <a href="https://en.wikipedia.org/wiki/Impostor_syndrome">imposter syndrome</a> and clearly put the junior members at ease. That is all to say, that saying the thing I least wanted to say helped build trust with the newest folks and let them know what I worry about which means they can be more sure when I’m confident. Always acting one way or another isn’t natural. Transparency, therefore, may start with the act of humanizing yourself and being vulnerable.</p>
-
-<p>Team buy-in is tough to earn. It is much easier when the process is created and enforced by the team. As the manager, I can try to keep it on guardrails, but determining it and enforcing it myself would be a mistake. Maybe this isn’t sustainable with a bigger team. What if all the laws in this country were determined democratically by the entire population. It would be way too heavy. But with a team of 13, this is still possible and it is so much stronger when the policing is done by the team rather than me.</p>
-
-<p>Transparency communicates trust. Exposing our vulnerabilities as an individual or an organization encourages candor and self-reflection. Putting a positive spin on everything doesn’t equate to boosted morale because it leads to whispers, eye rolling and eyebrow raising in the hallways. It is human nature to latch onto weaknesses, failures, and negatives and so if these deficiencies are not squashed publicly then they fester. They use rumors as sustenance and mutate in unpredictable ways. Talking about the hardest things right away is painful, but a preferable alternative to passively deferring to hearsay.</p>
-
-<p>Transparency is hard. Generals must be able to make decisions. Soldiers must follow orders. We run into trouble is when soldiers don’t buy into the purpose or mission. Even the most ardent followers will lose enthusiasm over time if they don’t feel like they can influence the decision making process. And so what we find is people will do enough to keep their job. They half-heartedly go through the motions. In short order, that becomes the norm and apathy is a difficult virus to contain. And so while we can&#8217;t ask everyone for their input on every decision, if we know what is important to our people, we can ask them at the right times. This requires the decision maker to actually know their people and that takes a serious investment. Do you have time for that? I guess that&#8217;s up to you, but second guessing, rumor squashing, and low-morale also eats up time so maybe this would be worth some investment.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -928,6 +1103,14 @@ intermediary</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/elastic-search/">Elastic Search</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/preparing-data-for-machine-learning/">Preparing Data for Machine Learning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/the-soul-in-the-machine-developing-for-humans/">The Soul in The Machine - Developing for Humans</a>
       </li>
     
@@ -937,14 +1120,6 @@ intermediary</li>
     
       <li class="post">
         <a href="/blog/7-righteous-fights/">7 righteous fights</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/databases-with-brad-urani/">Databases with Brad Urani</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/working-to-make-myself-obsolete/">Working to Make Myself Obsolete</a>
       </li>
     
   </ul>
