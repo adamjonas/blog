@@ -9,8 +9,8 @@
   <meta name="author" content="Adam Jonas">
 
   
-  <meta name="description" content="Intro &#8220;elastic search is full text sreach engine, non-relational DB, analytics engine&#8221; has clustering and managed over REST
-Suggest &hellip;">
+  <meta name="description" content="Network partitioning causing exchange issues on rabbitmq this was after netowrk maintenance
+solution was to delete exchange which then is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,587 @@ Suggest &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/more-ops-notes/">More Ops Notes</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-29T16:18:00-04:00" pubdate data-updated="true">Mar 29<span>th</span>, 2017</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Network partitioning causing exchange issues on rabbitmq</h2>
+
+<ul>
+<li>this was after netowrk maintenance</li>
+<li>solution was to delete exchange which then is automatically added
+back <a href="https://github.com/rabbitmq/rabbitmq-server/issues/887#issuecomment-290177962">documented here</a></li>
+</ul>
+
+
+<h2>Ubuntu 16</h2>
+
+<ul>
+<li>ubuntu 16 doesn&#8217;t ship with upstart so sysctld is what we&#8217;ll use to
+control services. <a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">systemctl commands</a>
+
+<ul>
+<li>can also run from <code>/etc/init.d/service start</code></li>
+</ul>
+</li>
+<li>rsyslog is what we use to get the logs to papertrail</li>
+<li>used the oracle version of Java 8</li>
+</ul>
+
+
+<h2>Digital ocean</h2>
+
+<ul>
+<li>backups (auto) are different than snapshots (not auto) and different
+in pricing as well</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/project-aristole/">Project Aristole</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-27T11:49:00-04:00" pubdate data-updated="true">Mar 27<span>th</span>, 2017</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><a href="https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html?_r=0">Quest to build the perfect team</a></li>
+</ul>
+
+
+<h2>Reading Notes</h2>
+
+<ul>
+<li>decentralized control</li>
+<li>manager surveys
+
+<ul>
+<li>different mediums to collect feedback</li>
+</ul>
+</li>
+<li>no exact patterns</li>
+<li>rapport building -> chit chat, care about others as people as much
+as co-workers
+
+<ul>
+<li>social sensitivity
+
+<ul>
+<li>reading the <a href="http://socialintelligence.labinthewild.org/mite/">Reading the Mind in the Eyes test</a></li>
+</ul>
+</li>
+<li>trust</li>
+</ul>
+</li>
+<li>groups norms are stronger than the individual, even if the
+individual is strong, driven and accomplished</li>
+<li>?what is data of a strong group?</li>
+<li>following up on hurtful interactions (saying the things that go
+unsaid)</li>
+<li>Manager:
+
+<ul>
+<li>humility, my team is smarter than me -> vulnerability</li>
+<li>fulfillment of creating a great team</li>
+<li>setting communication norms</li>
+<li>empathy norms and quick follow up</li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/crash-course/">Crash Course DevOps</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-20T11:12:00-04:00" pubdate data-updated="true">Mar 20<span>th</span>, 2017</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Wires, cables and WiFi</h2>
+
+<ul>
+<li>Bits sent as light beams, no signal loss
+
+<ul>
+<li>faster than copper</li>
+</ul>
+</li>
+<li>WiFi is radio and then translated into physical bits over the wires</li>
+<li>Bitrate -> bits per second -> how fast it can transmit</li>
+<li>bandwidth -> how much data can you receive over a period of time</li>
+<li><p>latency -> how long it takes, more hops to talk to Seiji than
+Kaitlin in the next room; ping time * distance</p></li>
+<li><p><code>traceroute</code> to see hops</p></li>
+</ul>
+
+
+<h2>IP addresses and DNS</h2>
+
+<ul>
+<li>ISP</li>
+<li>IP is a unique address
+
+<ul>
+<li>IPv4 - 4 billion unique addresses isn&#8217;t enough
+
+<ul>
+<li>32 bits, 8 octets</li>
+<li>32 bits long, 8 bits for each part of each address</li>
+<li>DHCP -> obtaining a lease renewal process on your network.</li>
+<li>to the outside world, Flatiron has the same IP provided
+by ISP</li>
+<li>router provides guests with temporary IP depending on how long
+your lease renewal is set</li>
+<li>renegotiate IP
+?- subnet mask</li>
+<li>255.255.255.255 is the max it could go, based on the octet</li>
+<li>static IP -> unique in the world</li>
+<li>private IP -> re-use private IP addresses behind networks</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p> IPv6 - 128 bits instead of 32</p>
+
+<ul>
+<li>hex representation to prevent us running out of static IPs</li>
+<li><p>DNS servers are split up in TLDs</p>
+
+<ul>
+<li>DNS on a router</li>
+</ul>
+</li>
+<li><p>google&#8217;s DNS will break it up by the TLD and domain</p></li>
+<li><a href="http://www.macworld.com/article/2824564/slow-internet-edit-your-dns-settings.html">google DNS</a> versus open DNS</li>
+<li>?www doesn&#8217;t mean anything any more, just another subdomain</li>
+<li>?CS of how the domain names at the DNS are stored?</li>
+</ul>
+</li>
+<li><p> TTL</p>
+
+<ul>
+<li>this record will expire at X time</li>
+<li>set TTL to an hour, it won&#8217;t have to look it up for an hour</li>
+<li>DNS propagation</li>
+</ul>
+</li>
+<li><p>DNS -> record type</p>
+
+<ul>
+<li>A record -> address</li>
+<li>maps the word name the domain to a physical IP address</li>
+<li>PTR -> pointer -> the reverse, input IP and get the domain</li>
+<li>FQDN -> A fully qualified domain name (<a href="http://stackoverflow.com/questions/19480767/domain-names-with-dots-at-the-end">FQDN</a>) is the complete domain name for a specific computer, or host, on the Internet.
+
+<ul>
+<li>Host name is gmail and .com is the TLD</li>
+</ul>
+</li>
+<li>CNAME -> mail.google.com is a CNAME of googlemail.l.google.com.
+
+<ul>
+<li>A records should be unique</li>
+</ul>
+</li>
+<li>why is there a dot at the end?
+
+<ul>
+<li>it is an absolute as opposed to the relative address</li>
+</ul>
+</li>
+<li>want multiple MX records, redudency strategy</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Packet, routers and reliability</h2>
+
+<ul>
+<li>fault tolerant</li>
+<li>TCP</li>
+<li><p>?How do they determine the route?</p>
+
+<ul>
+<li>routers own the ISP and the companies that own them</li>
+</ul>
+</li>
+<li><p>traceroute domain.com</p></li>
+<li><p>wireshark is a GUI of <a href="https://danielmiessler.com/study/tcpdump/#gs.9p=ZVMQ"><code>tcpdump</code></a></p></li>
+<li><p>IP address can change and it has a serial number or a MAC address
+(hardware address)</p></li>
+</ul>
+
+
+<h2>HTTP &amp; HTML</h2>
+
+<ul>
+<li>SSL and TLS (successor)
+
+<ul>
+<li>http listens on 80 and https listens on 443</li>
+<li>sslv3 has been deprecated</li>
+</ul>
+</li>
+<li>certificate authority vouches for site</li>
+<li>OpenSSL generates keys, authority will sign that</li>
+<li>self-signed certs like for nagios or letsencrypt will work fine</li>
+<li>SSLS
+
+<ul>
+<li>discrete logorithm problem</li>
+</ul>
+</li>
+<li>handshake process -> how to keep box locked and send secret
+
+<ul>
+<li>put treasure in box, lock box, send to friend</li>
+<li>friend puts lock on box, sends it back</li>
+<li>I remove lock from box and send back</li>
+<li>friend unlocks box</li>
+</ul>
+</li>
+<li>SSH
+
+<ul>
+<li>ssh forwarding sends private key along</li>
+<li>asymetric only used for authentication</li>
+<li>symetric is then used for encryption and decryption</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Bcrypt">bcrypt</a> is what we use for email</li>
+</ul>
+
+
+<h2>DDoS</h2>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System#DNS_resolvers">DNS resolvers</a> to amplify attack</li>
+</ul>
+
+
+<h2>DevinOps in review</h2>
+
+<ul>
+<li><a href="https://github.com/thiagopradi/octopus">Octopus gem</a> -> pooling, load balance select statements to read only
+replicas</li>
+<li>DB sharding
+
+<ul>
+<li>complex SQL joins, will put different tables in different DBs</li>
+<li>replication</li>
+</ul>
+</li>
+<li>floating IPs points to the master
+
+<ul>
+<li>static IP never changes</li>
+<li>use floating IPs rather than DNS because of propogation</li>
+</ul>
+</li>
+<li>usernames:
+
+<ul>
+<li>if you have a server on linux it should not be running on root</li>
+<li>if it&#8217;s a system process then it would be ok to run on root</li>
+<li>postgres is run as the postgres user
+
+<ul>
+<li>apache is run by deployer and passenger -> how ruby achieves
+paralellization (a module for apache)</li>
+</ul>
+</li>
+<li>deployer for Ironboard -> easy way to manage keys</li>
+<li>how owns the process, who owns the directory where the config
+files lives</li>
+</ul>
+</li>
+<li><code>etc/passwd</code> -> all the users on the box and who is logged in</li>
+<li>every service that has a port open to the internet it should have
+its own user</li>
+<li>username is usually the service name</li>
+<li><code>/var</code> is usually the log directory</li>
+<li><code>/etc</code> is usually the config directory</li>
+<li>WAL-E
+
+<ul>
+<li>ship our binary logs we sent to s3</li>
+<li><a href="https://en.wikipedia.org/wiki/Write-ahead_logging">write ahead logs</a> -> must be complete before actually modifies the
+DB with a transaction. This is the mechanism for rollbacks.
+
+<ul>
+<li>master just sends the write-ahead logs to the slave which then
+just replays them</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Backups
+
+<ul>
+<li>take a base and then the have these WAL backups and send them off
+and it will apply all the deltas</li>
+<li>can give us point in time restoration</li>
+<li>these logs will fill up our disk</li>
+<li>? how long do we keep WAL-E</li>
+<li>interface for deleting backups, s3 logs</li>
+<li>config of pg is <code>pg_hba.conf</code></li>
+<li>script to switch over primary/replication script turns <code>recovery.conf</code> to <code>recovery.done</code></li>
+<li><code>failover.sh</code> on the other replica as root
+
+<ul>
+<li>breaks replication, now need to configure replication on the new
+replication server</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Iptables">iptables</a> -> firewall</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Permissions</h2>
+
+<ul>
+<li>User, Group, World -> multiple users on the same machine, make sure
+processes don&#8217;t do stuff they aren&#8217;t supposed to</li>
+<li>chmod 755, 644</li>
+<li>all directories have to be 7
+
+<ul>
+<li>directories point to other files</li>
+</ul>
+</li>
+<li>cd is a program that takes a directory (file) as an argument and
+executes it</li>
+<li><code>etc/sudoers</code> -> determines who has root permissions; visudo -> creates a backup and prevents brackage</li>
+<li><code>useradd</code> give them a shell and name the user; want to add to the
+chef script</li>
+</ul>
+
+
+<h2>load balancer</h2>
+
+<ul>
+<li>front-end is learn.co, terminating SSL, in the</li>
+<li>backend -></li>
+<li>should be root on</li>
+</ul>
+
+
+<h2>Debugging</h2>
+
+<ul>
+<li><code>passenger-status --show=requests</code></li>
+<li><code>passenger-status</code></li>
+</ul>
+
+
+<h2>Automatic provisioning</h2>
+
+<ul>
+<li><a href="https://github.com/digitalocean/doctl">doctl</a></li>
+<li><a href="https://github.com/petems/tugboat">tugboat</a></li>
+</ul>
+
+
+<h2>cron</h2>
+
+<ul>
+<li>sends mail</li>
+</ul>
+
+
+<h2>IDE backend</h2>
+
+<ul>
+<li>backend application -> IDE umbrella</li>
+<li>main one is learn-ide-server cookbook</li>
+<li>different chef servers</li>
+<li>wombat</li>
+<li>traffic cop</li>
+<li>elixir-build01 -> build elixir on server because linux</li>
+<li>new server needs to be added to <a href="https://github.com/flatiron-labs/students-chef-repo/tree/master/cookbooks/learn-ide-haproxy">HAproxy</a></li>
+<li>lb -> <code>balance url_param token</code> hashing algorithm that determines
+which server the IDE connects to based on their Learn oauth token. (Optimization -> make hashing algo
+more granualar so that if a machine gets taken out the rotation, the
+othere aren&#8217;t rebalanced as well</li>
+<li>Load balance assignment is determined by dynect traffic management
+
+<ul>
+<li>own health monitoring</li>
+</ul>
+</li>
+<li><a href="https://www.gluster.org/">gluster</a> is fancy NFS
+
+<ul>
+<li>RAID -> redundant array of independent disks</li>
+</ul>
+</li>
+<li><a href="https://coreos.com/rkt/">rkt</a></li>
+<li>PTY - psuedoterminal, terminal emulator, connect to an arbitrary shell</li>
+<li>inotify -> FS event watcher</li>
+<li>containerization
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Aufs">aufs</a> loser -> <a href="https://en.wikipedia.org/wiki/UnionFS">unionfs</a> winner that was merged into linux</li>
+</ul>
+</li>
+<li>? do you bump archived tar&#8217;ed files when you archive again</li>
+</ul>
+
+
+<h2>IDE Umbrella</h2>
+
+<ul>
+<li>for adding IDE server (<a href="https://github.com/flatiron-labs/ide_umbrella/blob/master/config/prod.exs">node list</a>)</li>
+<li>dependencies in <code>mix.exs</code>; <a href="https://github.com/ninenines/cowboy">cowboy</a> is the webserver, <a href="https://github.com/devinus/poolboy">poolboy</a></li>
+<li>applications are like slightly fancy supervisors, <a href="https://github.com/bitwalker/distillery">distillery</a> release packaging</li>
+<li><code>mix deps.get</code> -> get dependencies</li>
+<li><code>iex -S mix</code></li>
+<li><code>:cowboy.start</code> -> erlang library, cowboy is lib which is an atom</li>
+<li><code>gen_server</code>, an abstraction on top of processes in general
+
+<ul>
+<li>provides state and a little behavior</li>
+</ul>
+</li>
+<li><code>agent</code> is just for state</li>
+<li>every connection gets its own process</li>
+<li>distillery builds them
+
+<ul>
+<li>release -> full replacement of previous release, must restart</li>
+<li>upgrade -> release plus upgrade instructions, relup file, modify
+the code in memory -> hotswap; preferable to release</li>
+<li><code>mix edeliver version qa</code></li>
+<li><code>mix edeliver version production</code></li>
+<li><code>mix edeliver build release</code></li>
+<li><code>mix edeliver deployer release to qa</code></li>
+<li><code>mix edeliver restart qa</code></li>
+<li><code>bin/ide start</code></li>
+<li><code>bin/ide attach</code> -> quit with ^D, not ^c (will kill process)</li>
+<li><code>bin/ide remote_console</code></li>
+<li><code>mix edeliver build upgrade --with=0.1.0+232424323-hdhfd</code></li>
+<li><code>mix edeliver deploy upgrade to qa</code> -> will prompt for version
+number</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Chef</h2>
+
+<ul>
+<li>server provisioning
+
+<ul>
+<li>consistency, automation</li>
+</ul>
+</li>
+<li>inheritance in the cookbooks, base cookbook -> security</li>
+<li>like ruby base cookbooks</li>
+<li><a href="https://blog.chef.io/2013/12/03/doing-wrapper-cookbooks-right/">wrapper cookbook</a>, like forking a cookbook without modifying it
+
+<ul>
+<li>increasing levels of abstraction</li>
+</ul>
+</li>
+<li>conventions of chef aren&#8217;t very clearly defined</li>
+<li>differences between recipes and cookbooks?</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -190,6 +771,38 @@ Suggest &hellip;">
 </ul>
 </li>
 <li>now beats added -> lightweight, written in go -> for shipping</li>
+</ul>
+
+
+<h2>Split Brain issue</h2>
+
+<ul>
+<li><a href="http://blog.trifork.com/2013/10/24/how-to-avoid-the-split-brain-problem-in-elasticsearch/">HOW TO AVOID THE SPLIT-BRAIN PROBLEM IN ELASTICSEARCH</a></li>
+</ul>
+
+
+<h2>Tinc</h2>
+
+<ul>
+<li>VPN -> encrypts traffic between servers</li>
+</ul>
+
+
+<h2>Setting up elastic search</h2>
+
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04">setting up a elasticsearch cluster on ubuntu</a></li>
+<li>used a ruby case statement to set the master versus the replicas up</li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html">shards, replicas, documents explained</a></li>
+<li><a href="https://qbox.io/blog/launching-and-scaling-elasticsearch">Thoughts on Launching and Scaling Elasticsearch</a></li>
+<li><a href="https://qbox.io/blog/optimizing-elasticsearch-how-many-shards-per-index">optimizing sharding</a>
+
+<ul>
+<li><code>A good launch point for capacity planning is to allocate shards with a factor of 1.5 to 3 times the number of nodes in your initial configuration. If you're starting with 3 nodes, then we recommend that you specify at most 3 x 3 = 9 shards.</code></li>
+<li><code>We reiterate that shards consume resources and require processing overhead.</code></li>
+</ul>
+</li>
+<li>needed to bump vm.max_map_count according to <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html">these instructions</a></li>
 </ul>
 
 </div>
@@ -918,176 +1531,6 @@ intermediary</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/new-technology-and-developer-happiness/">New Technology and Developer Happiness</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-11-15T12:24:00-05:00" pubdate data-updated="true">Nov 15<span>th</span>, 2016</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>What is the price worth paying to introduce a new technology into the stack? For our heavily junior team of 13 the price feels high. Our JS weapon of choice has been backbone and marionette. This toolset wasn’t determined by me. It was molded and implemented by a talented dev who might be a little short on leadership experience but has talent and intuition in spades. We’ve made some mistakes along the way, but the architectural choices he has made have served us well. Still about 8 months since its we push our first major feature set with marionette, the entire team has yet to be completely onboarded. We may be getting to the size where we can split our squad into front-end and back-end specialists, but to date that has never been discussed as a group. The fact that we all haven’t got there is a problem. It means that some of us aren’t capable to work on parts of the stack, which affects feature assignments and pairing.</p>
-
-<p>This same dev is now suggesting that we introduce React to one aspect of the stack because of its rising popularity in the community. Our team spends a lot of time focusing on happiness at an individual level with 1 on 1s and <a href="/blog/quarterlies/">quarterlies</a>, but my priority isn’t individual happiness but rather team morale. At the moment, team morale is at an all-time high. Will introducing a new barrier to entry positively affect team morale because of its shiney? Will allowing the two JS leads on the team play with a new toy positively affect team morale? They both claimed in their last quarterly that their work brought them high levels of meaning and purpose and they found it challenging enough.</p>
-
-<p>It is a tough call. I don’t have enough knowledge to know if this is truly a better tool or something new to learn for the sake of something new. How will we go about leveling up newcomers on two JS systems?</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/goal-setting-for-devs/">Goal Setting for Devs</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-10-11T10:05:00-04:00" pubdate data-updated="true">Oct 11<span>th</span>, 2016</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I heard you, goals are important. I get it. I&#8217;ve watched the Ted talks and read the zillionth article on the importance of goals. I understand the psychology and the physiology. I’ve got a dirty secret though. I haven’t been able to set goals for developers. We’ve tried KPIs and they don’t seem to filter down to the individual contributor level. When I ran our apprenticeship program two years ago I tried weekly goals, bi-weekly goals, monthly goals and quarterly goals. The problem was, the constants, the areas the goals could be clearly defined were mostly areas of personal development &#8211; writing blog posts, learning keyboard shortcuts, giving a lunch and learn, etc. I had a much harder time defining goals for them to improve in their core job function, namely contributing well built features and pushing good code.</p>
-
-<p>Recently we took a shot at changing our criteria for hiring and job responsibilities to being value based rather than bring task or milestone based. This rubric broke down our company values into behaviors and defined the expectations for each level within engineering. The resulting document sat well with the team and I think we are gettng closer, but I still can’t help but feel unfortable about the subjectivity of how to define a good productive dev. What devs do is complicated, which makes promotions and evaluation complicated. I don’t care whether you wrote a blog post this week if you pushed a great feature. I do care that you helped someone else push their feature or jumped in on a tough bug when everyone pretended they didn&#8217;t see it. But how do I formulate concrete actionable goals around that? Anything I come up with feels so arbitrary.</p>
-
-<p>When we tried KPIs for the engineering team it made sense to have goals around the product. But for individual contributors who didn’t have a choice about what feature they build or how the product evolves from a high level, I could connect them to the department goal in a meta way, but not on an individual basis. How could they be held responsible for the adoption success a feature set, for example, that they didn’t have much agency in designing or implementing?</p>
-
-<p>The best I can do for goal setting is to pull out actionable points from our <a href="/blog/quarterlies/">longer-arching conversations</a> and hold them accountable on the things that matter to them both. It feels like there has to be something better, but I haven&#8217;t been smart enough to figure it out.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/quarterlies/">Quarterlies</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-10-03T11:54:00-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2016</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Weekly 1 on 1s are not enough. Maybe if I did them better they would be, but mine are all on Fridays and often I’m not able to tease out anything more than the day to day updates and feelings of the past week. That’s not to say that I’m going to stop, 1 on 1s keep me connected to my reports and even if 1 out of every 5 is a breakthrough session then it is time very well spent.</p>
-
-<p>The problem that I see in 1 on 1s as I run them is that it is hard to focus on the longer arching themes on a weekly basis. For whatever reason, it feels awkward to ask about career goals, work fulfillment, etc. with such regularity. Enter the quarterly. I’ve just completed my fourth attempt of quarterlies (not including the annual review). I’m happy with the conversations and the depth of the issues we discuss in those session but my attempt at this didn’t start very well.</p>
-
-<p>Here were the set of questions from the first quarterly survey which I conducted using google forms:</p>
-
-<ul>
-<li>How happy are you in labs?</li>
-<li>I feel like I&#8217;m growing my skills</li>
-<li>I get clear and frequent feedback about my performance?</li>
-<li>Given the products we are building, what types of things do you want to work on?</li>
-<li>What skills (on or off the keyboard) do you want to improve that you don&#8217;t see an opportunity to do in your current role?</li>
-<li>I understand why we are building Learn and the related apps</li>
-<li>If you answer that you get it, please summarize why we are putting so much work into Learn.</li>
-<li>If you answered you don&#8217;t get it, please tell me what needs further explanation.</li>
-<li>Anything else you want to discuss?</li>
-<li>What is one thing that would make you happier or more productive?</li>
-</ul>
-
-
-<p>This caused a lot of anxiety. Why am I doing this? What was I going to use this information for? Many of those first conversations were stilted, even confrontational. Someone actually took this time to give his two week notice. It wasn’t pretty. Even so, I was able to battle through these difficult conversations and pull out a lot of agenda topics that we were able to resolve as a group. This made it all worthwhile. Gathering the team in the room to talk about issues that were affecting all of us and re-focus our direction was incredibly fruitful. I also followed up with the individuals that took issue with the set of questions I was asking and had them help me craft a questionnaire that was easier for them to swallow.</p>
-
-<p>Three month later the process went much smoother. Here were the revised questions.</p>
-
-<ul>
-<li>I feel like I&#8217;m growing my skills</li>
-<li>What is one thing that would make you happier or more productive?</li>
-<li>In what ways would you like to grow your skills? What kind of support will you need?</li>
-<li>Do you feel like you’re getting enough clear feedback?</li>
-<li>How do you feel about the Lab&#8217;s processes in general?</li>
-<li>Given the products we are building, what types of things do you want to work on?</li>
-<li>I find the work that I do full of meaning and purpose</li>
-<li>I am proud of the work that I do for my team</li>
-<li>The work that I do is challenging</li>
-<li>How would you rate yourself in the following 4 tenets of our “shipping culture” (circle one for each category):</li>
-<li>Velocity</li>
-<li>Quality</li>
-<li>Ownership</li>
-<li>Communication</li>
-</ul>
-
-
-<p>This one clicked much better. I got great responses and we had a great team discussion. Processes changed, people were engaged and excited to debate with each other. I was able to present the group with statistics on aggregated stats on how challenged individuals felt and where we needed to improve as a group.</p>
-
-<p>A year later, this is the best thing I think I do as a manager. We ask similar long form answers but have dropped the ratings of the department values in lieu of the company values (see future post on Value Based Assessments). With a young team, it isn’t uncommon for me to see career aspirations change quarter along with engagement and performance. I’ve found these quarterlies to be better discussions than the annual review. Some reasons might be, it isn’t as formal or mired in the connotations of a scary end of year process. I use google forms rather than some HR software, which seems pretty natural and lightweight for devs. I choose a venue that seems more informal but is still off-site (recently I’ve been camping out at Au Bon Pain). And yet, much of this conversation is spent on discussing performance, areas of improvement, how to grow, resetting expectations and ways to improve the team and product &#8211; all the things that I would imagine a good annual review process is supposed to do. This cycle I’ve scheduled 90 minutes for each session but not one actually was completed in time. People are talking for 2 to 2 ½ hour stretches even though it is basically the same set of questions that I’ve used for the last three rounds. This is a huge investment of time. All said and done I will have done more than 30 hours of quarterlies before preparing a deck we can discuss as a group. But this is working and the conversations have improved every quarter.</p>
-
-<p>Even with its rocky start, quarterlies have served us well. I would have never known many of the team’s process pain points without these conversations and it has saved me when performance slips so that I can get on the record to address it quickly. If annual reviews are broken my first guess would be that even if they are conducted well, they are just too infrequent. Things on my team move too quickly to address on a 12-month cycle. This is my best shot at making it better.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1103,23 +1546,23 @@ intermediary</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/more-ops-notes/">More Ops Notes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/project-aristole/">Project Aristole</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/crash-course/">Crash Course DevOps</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/elastic-search/">Elastic Search</a>
       </li>
     
       <li class="post">
         <a href="/blog/preparing-data-for-machine-learning/">Preparing Data for Machine Learning</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/the-soul-in-the-machine-developing-for-humans/">The Soul in The Machine - Developing for Humans</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/intro-to-dns/">Intro to DNS</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/7-righteous-fights/">7 righteous fights</a>
       </li>
     
   </ul>

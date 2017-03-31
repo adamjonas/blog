@@ -4,7 +4,7 @@
   <title><![CDATA[Hack hack hack...]]></title>
   <link href="http://adamjonas.com/atom.xml" rel="self"/>
   <link href="http://adamjonas.com/"/>
-  <updated>2017-03-10T19:49:11-05:00</updated>
+  <updated>2017-03-31T11:46:07-04:00</updated>
   <id>http://adamjonas.com/</id>
   <author>
     <name><![CDATA[Adam Jonas]]></name>
@@ -12,6 +12,500 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[More Ops Notes]]></title>
+    <link href="http://adamjonas.com/blog/more-ops-notes/"/>
+    <updated>2017-03-29T16:18:00-04:00</updated>
+    <id>http://adamjonas.com/blog/more-ops-notes</id>
+    <content type="html"><![CDATA[<h2>Network partitioning causing exchange issues on rabbitmq</h2>
+
+<ul>
+<li>this was after netowrk maintenance</li>
+<li>solution was to delete exchange which then is automatically added
+back <a href="https://github.com/rabbitmq/rabbitmq-server/issues/887#issuecomment-290177962">documented here</a></li>
+</ul>
+
+
+<h2>Ubuntu 16</h2>
+
+<ul>
+<li>ubuntu 16 doesn&#8217;t ship with upstart so sysctld is what we&#8217;ll use to
+control services. <a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">systemctl commands</a>
+
+<ul>
+<li>can also run from <code>/etc/init.d/service start</code></li>
+</ul>
+</li>
+<li>rsyslog is what we use to get the logs to papertrail</li>
+<li>used the oracle version of Java 8</li>
+</ul>
+
+
+<h2>Digital ocean</h2>
+
+<ul>
+<li>backups (auto) are different than snapshots (not auto) and different
+in pricing as well</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project Aristole]]></title>
+    <link href="http://adamjonas.com/blog/project-aristole/"/>
+    <updated>2017-03-27T11:49:00-04:00</updated>
+    <id>http://adamjonas.com/blog/project-aristole</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html?_r=0">Quest to build the perfect team</a></li>
+</ul>
+
+
+<h2>Reading Notes</h2>
+
+<ul>
+<li>decentralized control</li>
+<li>manager surveys
+
+<ul>
+<li>different mediums to collect feedback</li>
+</ul>
+</li>
+<li>no exact patterns</li>
+<li>rapport building -> chit chat, care about others as people as much
+as co-workers
+
+<ul>
+<li>social sensitivity
+
+<ul>
+<li>reading the <a href="http://socialintelligence.labinthewild.org/mite/">Reading the Mind in the Eyes test</a></li>
+</ul>
+</li>
+<li>trust</li>
+</ul>
+</li>
+<li>groups norms are stronger than the individual, even if the
+individual is strong, driven and accomplished</li>
+<li>?what is data of a strong group?</li>
+<li>following up on hurtful interactions (saying the things that go
+unsaid)</li>
+<li>Manager:
+
+<ul>
+<li>humility, my team is smarter than me -> vulnerability</li>
+<li>fulfillment of creating a great team</li>
+<li>setting communication norms</li>
+<li>empathy norms and quick follow up</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Crash Course DevOps]]></title>
+    <link href="http://adamjonas.com/blog/crash-course/"/>
+    <updated>2017-03-20T11:12:00-04:00</updated>
+    <id>http://adamjonas.com/blog/crash-course</id>
+    <content type="html"><![CDATA[<h2>Wires, cables and WiFi</h2>
+
+<ul>
+<li>Bits sent as light beams, no signal loss
+
+<ul>
+<li>faster than copper</li>
+</ul>
+</li>
+<li>WiFi is radio and then translated into physical bits over the wires</li>
+<li>Bitrate -> bits per second -> how fast it can transmit</li>
+<li>bandwidth -> how much data can you receive over a period of time</li>
+<li><p>latency -> how long it takes, more hops to talk to Seiji than
+Kaitlin in the next room; ping time * distance</p></li>
+<li><p><code>traceroute</code> to see hops</p></li>
+</ul>
+
+
+<h2>IP addresses and DNS</h2>
+
+<ul>
+<li>ISP</li>
+<li>IP is a unique address
+
+<ul>
+<li>IPv4 - 4 billion unique addresses isn&#8217;t enough
+
+<ul>
+<li>32 bits, 8 octets</li>
+<li>32 bits long, 8 bits for each part of each address</li>
+<li>DHCP -> obtaining a lease renewal process on your network.</li>
+<li>to the outside world, Flatiron has the same IP provided
+by ISP</li>
+<li>router provides guests with temporary IP depending on how long
+your lease renewal is set</li>
+<li>renegotiate IP
+?- subnet mask</li>
+<li>255.255.255.255 is the max it could go, based on the octet</li>
+<li>static IP -> unique in the world</li>
+<li>private IP -> re-use private IP addresses behind networks</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p> IPv6 - 128 bits instead of 32</p>
+
+<ul>
+<li>hex representation to prevent us running out of static IPs</li>
+<li><p>DNS servers are split up in TLDs</p>
+
+<ul>
+<li>DNS on a router</li>
+</ul>
+</li>
+<li><p>google&#8217;s DNS will break it up by the TLD and domain</p></li>
+<li><a href="http://www.macworld.com/article/2824564/slow-internet-edit-your-dns-settings.html">google DNS</a> versus open DNS</li>
+<li>?www doesn&#8217;t mean anything any more, just another subdomain</li>
+<li>?CS of how the domain names at the DNS are stored?</li>
+</ul>
+</li>
+<li><p> TTL</p>
+
+<ul>
+<li>this record will expire at X time</li>
+<li>set TTL to an hour, it won&#8217;t have to look it up for an hour</li>
+<li>DNS propagation</li>
+</ul>
+</li>
+<li><p>DNS -> record type</p>
+
+<ul>
+<li>A record -> address</li>
+<li>maps the word name the domain to a physical IP address</li>
+<li>PTR -> pointer -> the reverse, input IP and get the domain</li>
+<li>FQDN -> A fully qualified domain name (<a href="http://stackoverflow.com/questions/19480767/domain-names-with-dots-at-the-end">FQDN</a>) is the complete domain name for a specific computer, or host, on the Internet.
+
+<ul>
+<li>Host name is gmail and .com is the TLD</li>
+</ul>
+</li>
+<li>CNAME -> mail.google.com is a CNAME of googlemail.l.google.com.
+
+<ul>
+<li>A records should be unique</li>
+</ul>
+</li>
+<li>why is there a dot at the end?
+
+<ul>
+<li>it is an absolute as opposed to the relative address</li>
+</ul>
+</li>
+<li>want multiple MX records, redudency strategy</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Packet, routers and reliability</h2>
+
+<ul>
+<li>fault tolerant</li>
+<li>TCP</li>
+<li><p>?How do they determine the route?</p>
+
+<ul>
+<li>routers own the ISP and the companies that own them</li>
+</ul>
+</li>
+<li><p>traceroute domain.com</p></li>
+<li><p>wireshark is a GUI of <a href="https://danielmiessler.com/study/tcpdump/#gs.9p=ZVMQ"><code>tcpdump</code></a></p></li>
+<li><p>IP address can change and it has a serial number or a MAC address
+(hardware address)</p></li>
+</ul>
+
+
+<h2>HTTP &amp; HTML</h2>
+
+<ul>
+<li>SSL and TLS (successor)
+
+<ul>
+<li>http listens on 80 and https listens on 443</li>
+<li>sslv3 has been deprecated</li>
+</ul>
+</li>
+<li>certificate authority vouches for site</li>
+<li>OpenSSL generates keys, authority will sign that</li>
+<li>self-signed certs like for nagios or letsencrypt will work fine</li>
+<li>SSLS
+
+<ul>
+<li>discrete logorithm problem</li>
+</ul>
+</li>
+<li>handshake process -> how to keep box locked and send secret
+
+<ul>
+<li>put treasure in box, lock box, send to friend</li>
+<li>friend puts lock on box, sends it back</li>
+<li>I remove lock from box and send back</li>
+<li>friend unlocks box</li>
+</ul>
+</li>
+<li>SSH
+
+<ul>
+<li>ssh forwarding sends private key along</li>
+<li>asymetric only used for authentication</li>
+<li>symetric is then used for encryption and decryption</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Bcrypt">bcrypt</a> is what we use for email</li>
+</ul>
+
+
+<h2>DDoS</h2>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System#DNS_resolvers">DNS resolvers</a> to amplify attack</li>
+</ul>
+
+
+<h2>DevinOps in review</h2>
+
+<ul>
+<li><a href="https://github.com/thiagopradi/octopus">Octopus gem</a> -> pooling, load balance select statements to read only
+replicas</li>
+<li>DB sharding
+
+<ul>
+<li>complex SQL joins, will put different tables in different DBs</li>
+<li>replication</li>
+</ul>
+</li>
+<li>floating IPs points to the master
+
+<ul>
+<li>static IP never changes</li>
+<li>use floating IPs rather than DNS because of propogation</li>
+</ul>
+</li>
+<li>usernames:
+
+<ul>
+<li>if you have a server on linux it should not be running on root</li>
+<li>if it&#8217;s a system process then it would be ok to run on root</li>
+<li>postgres is run as the postgres user
+
+<ul>
+<li>apache is run by deployer and passenger -> how ruby achieves
+paralellization (a module for apache)</li>
+</ul>
+</li>
+<li>deployer for Ironboard -> easy way to manage keys</li>
+<li>how owns the process, who owns the directory where the config
+files lives</li>
+</ul>
+</li>
+<li><code>etc/passwd</code> -> all the users on the box and who is logged in</li>
+<li>every service that has a port open to the internet it should have
+its own user</li>
+<li>username is usually the service name</li>
+<li><code>/var</code> is usually the log directory</li>
+<li><code>/etc</code> is usually the config directory</li>
+<li>WAL-E
+
+<ul>
+<li>ship our binary logs we sent to s3</li>
+<li><a href="https://en.wikipedia.org/wiki/Write-ahead_logging">write ahead logs</a> -> must be complete before actually modifies the
+DB with a transaction. This is the mechanism for rollbacks.
+
+<ul>
+<li>master just sends the write-ahead logs to the slave which then
+just replays them</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Backups
+
+<ul>
+<li>take a base and then the have these WAL backups and send them off
+and it will apply all the deltas</li>
+<li>can give us point in time restoration</li>
+<li>these logs will fill up our disk</li>
+<li>? how long do we keep WAL-E</li>
+<li>interface for deleting backups, s3 logs</li>
+<li>config of pg is <code>pg_hba.conf</code></li>
+<li>script to switch over primary/replication script turns <code>recovery.conf</code> to <code>recovery.done</code></li>
+<li><code>failover.sh</code> on the other replica as root
+
+<ul>
+<li>breaks replication, now need to configure replication on the new
+replication server</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Iptables">iptables</a> -> firewall</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Permissions</h2>
+
+<ul>
+<li>User, Group, World -> multiple users on the same machine, make sure
+processes don&#8217;t do stuff they aren&#8217;t supposed to</li>
+<li>chmod 755, 644</li>
+<li>all directories have to be 7
+
+<ul>
+<li>directories point to other files</li>
+</ul>
+</li>
+<li>cd is a program that takes a directory (file) as an argument and
+executes it</li>
+<li><code>etc/sudoers</code> -> determines who has root permissions; visudo -> creates a backup and prevents brackage</li>
+<li><code>useradd</code> give them a shell and name the user; want to add to the
+chef script</li>
+</ul>
+
+
+<h2>load balancer</h2>
+
+<ul>
+<li>front-end is learn.co, terminating SSL, in the</li>
+<li>backend -></li>
+<li>should be root on</li>
+</ul>
+
+
+<h2>Debugging</h2>
+
+<ul>
+<li><code>passenger-status --show=requests</code></li>
+<li><code>passenger-status</code></li>
+</ul>
+
+
+<h2>Automatic provisioning</h2>
+
+<ul>
+<li><a href="https://github.com/digitalocean/doctl">doctl</a></li>
+<li><a href="https://github.com/petems/tugboat">tugboat</a></li>
+</ul>
+
+
+<h2>cron</h2>
+
+<ul>
+<li>sends mail</li>
+</ul>
+
+
+<h2>IDE backend</h2>
+
+<ul>
+<li>backend application -> IDE umbrella</li>
+<li>main one is learn-ide-server cookbook</li>
+<li>different chef servers</li>
+<li>wombat</li>
+<li>traffic cop</li>
+<li>elixir-build01 -> build elixir on server because linux</li>
+<li>new server needs to be added to <a href="https://github.com/flatiron-labs/students-chef-repo/tree/master/cookbooks/learn-ide-haproxy">HAproxy</a></li>
+<li>lb -> <code>balance url_param token</code> hashing algorithm that determines
+which server the IDE connects to based on their Learn oauth token. (Optimization -> make hashing algo
+more granualar so that if a machine gets taken out the rotation, the
+othere aren&#8217;t rebalanced as well</li>
+<li>Load balance assignment is determined by dynect traffic management
+
+<ul>
+<li>own health monitoring</li>
+</ul>
+</li>
+<li><a href="https://www.gluster.org/">gluster</a> is fancy NFS
+
+<ul>
+<li>RAID -> redundant array of independent disks</li>
+</ul>
+</li>
+<li><a href="https://coreos.com/rkt/">rkt</a></li>
+<li>PTY - psuedoterminal, terminal emulator, connect to an arbitrary shell</li>
+<li>inotify -> FS event watcher</li>
+<li>containerization
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Aufs">aufs</a> loser -> <a href="https://en.wikipedia.org/wiki/UnionFS">unionfs</a> winner that was merged into linux</li>
+</ul>
+</li>
+<li>? do you bump archived tar&#8217;ed files when you archive again</li>
+</ul>
+
+
+<h2>IDE Umbrella</h2>
+
+<ul>
+<li>for adding IDE server (<a href="https://github.com/flatiron-labs/ide_umbrella/blob/master/config/prod.exs">node list</a>)</li>
+<li>dependencies in <code>mix.exs</code>; <a href="https://github.com/ninenines/cowboy">cowboy</a> is the webserver, <a href="https://github.com/devinus/poolboy">poolboy</a></li>
+<li>applications are like slightly fancy supervisors, <a href="https://github.com/bitwalker/distillery">distillery</a> release packaging</li>
+<li><code>mix deps.get</code> -> get dependencies</li>
+<li><code>iex -S mix</code></li>
+<li><code>:cowboy.start</code> -> erlang library, cowboy is lib which is an atom</li>
+<li><code>gen_server</code>, an abstraction on top of processes in general
+
+<ul>
+<li>provides state and a little behavior</li>
+</ul>
+</li>
+<li><code>agent</code> is just for state</li>
+<li>every connection gets its own process</li>
+<li>distillery builds them
+
+<ul>
+<li>release -> full replacement of previous release, must restart</li>
+<li>upgrade -> release plus upgrade instructions, relup file, modify
+the code in memory -> hotswap; preferable to release</li>
+<li><code>mix edeliver version qa</code></li>
+<li><code>mix edeliver version production</code></li>
+<li><code>mix edeliver build release</code></li>
+<li><code>mix edeliver deployer release to qa</code></li>
+<li><code>mix edeliver restart qa</code></li>
+<li><code>bin/ide start</code></li>
+<li><code>bin/ide attach</code> -> quit with ^D, not ^c (will kill process)</li>
+<li><code>bin/ide remote_console</code></li>
+<li><code>mix edeliver build upgrade --with=0.1.0+232424323-hdhfd</code></li>
+<li><code>mix edeliver deploy upgrade to qa</code> -> will prompt for version
+number</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Chef</h2>
+
+<ul>
+<li>server provisioning
+
+<ul>
+<li>consistency, automation</li>
+</ul>
+</li>
+<li>inheritance in the cookbooks, base cookbook -> security</li>
+<li>like ruby base cookbooks</li>
+<li><a href="https://blog.chef.io/2013/12/03/doing-wrapper-cookbooks-right/">wrapper cookbook</a>, like forking a cookbook without modifying it
+
+<ul>
+<li>increasing levels of abstraction</li>
+</ul>
+</li>
+<li>conventions of chef aren&#8217;t very clearly defined</li>
+<li>differences between recipes and cookbooks?</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Elastic Search]]></title>
@@ -90,6 +584,38 @@
 </ul>
 </li>
 <li>now beats added -> lightweight, written in go -> for shipping</li>
+</ul>
+
+
+<h2>Split Brain issue</h2>
+
+<ul>
+<li><a href="http://blog.trifork.com/2013/10/24/how-to-avoid-the-split-brain-problem-in-elasticsearch/">HOW TO AVOID THE SPLIT-BRAIN PROBLEM IN ELASTICSEARCH</a></li>
+</ul>
+
+
+<h2>Tinc</h2>
+
+<ul>
+<li>VPN -> encrypts traffic between servers</li>
+</ul>
+
+
+<h2>Setting up elastic search</h2>
+
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04">setting up a elasticsearch cluster on ubuntu</a></li>
+<li>used a ruby case statement to set the master versus the replicas up</li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html">shards, replicas, documents explained</a></li>
+<li><a href="https://qbox.io/blog/launching-and-scaling-elasticsearch">Thoughts on Launching and Scaling Elasticsearch</a></li>
+<li><a href="https://qbox.io/blog/optimizing-elasticsearch-how-many-shards-per-index">optimizing sharding</a>
+
+<ul>
+<li><code>A good launch point for capacity planning is to allocate shards with a factor of 1.5 to 3 times the number of nodes in your initial configuration. If you're starting with 3 nodes, then we recommend that you specify at most 3 x 3 = 9 shards.</code></li>
+<li><code>We reiterate that shards consume resources and require processing overhead.</code></li>
+</ul>
+</li>
+<li>needed to bump vm.max_map_count according to <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html">these instructions</a></li>
 </ul>
 
 ]]></content>
@@ -898,458 +1424,6 @@ intermediary</li>
 <blockquote><p>There’s no generally accepted definition of a pattern, but perhaps the best place to start is Christopher Alexander, an inspiration for many pattern enthusi- asts: “Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice” [Alexander et al.]. Alexander is an architect, so he was talking about buildings, but the definition works pretty nicely for software as well. The focus of the pattern is a particular solution, one that’s both com- mon and effective in dealing with one or more recurring problems. Another way of looking at it is that a pattern is a chunk of advice and the art of creating patterns is to divide up many pieces of advice into relatively independent chunks so that you can refer to them and discuss them more or less separately. p. 9</p></blockquote>
 
 <h2>Making a choice</h2>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Growing Object-Oriented Software, Guided By Tests]]></title>
-    <link href="http://adamjonas.com/blog/growing-object-oriented-software-guided-by-tests/"/>
-    <updated>2016-05-28T16:51:00-04:00</updated>
-    <id>http://adamjonas.com/blog/growing-object-oriented-software-guided-by-tests</id>
-    <content type="html"><![CDATA[<h2>Object-Oriented Style</h2>
-
-<blockquote><p>We value code that is easy to maintain over code that is easy to write. Implementing a feature in the most direct way can damage the maintainability of the system, for example by making the code difficult to understand or by introducing hidden dependencies between components. Balancing immediate and longer-term concerns is often tricky, but we’ve seen too many teams that can no longer deliver because their system is too brittle. p. 47</p>
-
-<p>Encapsulation and Information Hiding
-  We want to be careful with the distinction between &#8220;encapsulation&#8221; and &#8220;information
-hiding.&#8221; The terms are often used interchangeably but actually refer to two separate,
-and largely orthogonal, qualities:
-  Encapsulation
-  Ensures that the behavior of an object can only be affected through its API.It lets us control how much a change to one object will impact other parts of the system by ensuring that there are no unexpected dependencies between
-unrelated components.</p></blockquote>
-
-<p>  Information hiding
-  Conceals how an object implements its functionality behind the abstraction of its API. It lets us work with higher abstractions by ignoring lower-level details that are unrelated to the task at hand. p. 49</p>
-
-<blockquote><p>Our heuristic is that we should be able to describe what an object does without using any conjunctions (“and,” “or”). If we find ourselves adding clauses to the description, then the object probably should be broken up into collaborating objects, usually one for each clause. p. 52</p></blockquote>
-
-<p>Context Independence</p>
-
-<blockquote><p>While the “composite simpler than the sum of its parts” rule helps us decide whether an object hides enough information, the “context independence” rule helps us decide whether an object hides too much or hides the wrong information. p.54</p></blockquote>
-
-<h2>Achieving Object-Oriented Design</h2>
-
-<blockquote><p>Interface and Protocol
-Steve heard this useful distinction in a conference talk: an interface describes whether two components will fit together, while a protocol describes whether they <strong>will work</strong> together. p. 58</p>
-
-<p>Kernighan and Plauger attribute the idea of pipes to Douglas McIlroy, who wrote a memo in 1964 suggesting the metaphor of data passing through a segmented garden hose. It’s currently available at <a href="ttp://plan9.bell-labs.com/who/dmr/mdmpipe.pdf">http://plan9.bell-labs.com/who/dmr/mdmpipe.pdf</a>. p. 66</p></blockquote>
-
-<h2>The Sniper Makes a Bid</h2>
-
-<blockquote><p>Defer Decisions
-There’s a technique we’ve used a couple of times now, which is to introduce a null implementation of a method (or even a type) to get us through the next step. This helps us focus on the immediate task without getting dragged into thinking about the next significant chunk of functionality. The null Auction, for example, allowed us to plug in a new relationship we’d discovered in a unit test without getting pulled into messaging issues. That, in turn, meant we could stop and think about the dependencies between our objects without the pressure of having a broken compilation. p. 136</p>
-
-<p><strong>When the facts change, I change my mind. What do you do, sir?</strong>
-  —John Maynard Keynes p. 172</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Computer Science according to Spencer]]></title>
-    <link href="http://adamjonas.com/blog/computer-science-according-to-spencer/"/>
-    <updated>2016-04-27T13:07:00-04:00</updated>
-    <id>http://adamjonas.com/blog/computer-science-according-to-spencer</id>
-    <content type="html"><![CDATA[<h2>What is it</h2>
-
-<ul>
-<li><a href="http://stackoverflow.com/questions/1062811/difference-between-a-computer-scientist-and-computer-programmer">cs versus programming</a></li>
-</ul>
-
-
-<h2>Big O</h2>
-
-<ul>
-<li>used to classify algorithms by changes to the inputs</li>
-<li>O(1) - constant time - kilometers to millimeters</li>
-<li>O(log n) - opposite of exponential growth, searching binary tree</li>
-<li>O(n) - iterating over an array</li>
-<li>O(n log n) - good sorting algorithms</li>
-<li>O(n<sup>2)</sup> - bubble sort (bad algoritms)</li>
-<li>O(2<sup>n)</sup> - the chess board, example doubling something</li>
-</ul>
-
-
-<h2>Exercises</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="mi">1</span><span class="o">.</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="nf">rectangle_area</span><span class="o">(</span><span class="n">height</span><span class="o">,</span> <span class="n">width</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">height</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 2*height + 1</span>
-</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">width</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 2*height*width + height</span>
-</span><span class='line'>        <span class="n">area</span><span class="o">++;</span> <span class="c1">// height*width</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">area</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nl">complexity:</span> <span class="mi">3</span><span class="o">*</span><span class="n">height</span><span class="o">*</span><span class="n">width</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">height</span> <span class="o">+</span> <span class="mi">3</span>
-</span><span class='line'>  <span class="nl">order:</span> <span class="n">O</span><span class="o">(</span><span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="mi">2</span><span class="o">.</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">Constant</span> <span class="n">time</span><span class="o">.</span> <span class="nf">O</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="mi">3</span><span class="o">.</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="nf">halves</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// n</span>
-</span><span class='line'>      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="c1">// n</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;)</span> <span class="o">{</span> <span class="c1">// n + n + n</span>
-</span><span class='line'>      <span class="n">count</span><span class="o">++;</span> <span class="c1">// n</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">count</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nl">Complexity:</span> <span class="mi">6</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2</span>
-</span><span class='line'>  <span class="n">Order</span> <span class="nf">O</span><span class="o">(</span><span class="n">log</span> <span class="n">n</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="mi">4</span><span class="o">.</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="nf">bacteria_generation</span><span class="o">(</span><span class="n">days</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">total_population</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">current_population</span> <span class="o">=</span> <span class="n">total_population</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">days</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 1 + days - 1 + days - 1</span>
-</span><span class='line'>      <span class="n">current_population</span> <span class="o">=</span> <span class="n">total_population</span><span class="o">;</span> <span class="c1">// days - 1</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">current_population</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
-</span><span class='line'>        <span class="n">total_population</span><span class="o">++;</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">total_population</span><span class="o">;</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nl">Order:</span> <span class="n">O</span><span class="o">(</span><span class="mi">2</span><span class="n">n</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="mi">5</span><span class="o">.</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="nf">max</span><span class="o">(</span><span class="n">array</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span> <span class="c1">// 1</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">//n + 1, [cost of determining array length](http://stackoverflow.com/questions/5872570/is-fixed-array-size-on-or-o1-in-space)</span>
-</span><span class='line'>      <span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// n</span>
-</span><span class='line'>        <span class="n">max</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">];</span> <span class="c1">// potential n</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">max</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">[</span><span class="mi">3</span><span class="n">n</span> <span class="o">+</span> <span class="mi">3</span> <span class="n">complexity</span><span class="o">]</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">OR</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kt">int</span> <span class="nf">max</span><span class="o">(</span><span class="n">array</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">temp</span><span class="o">;</span> <span class="c1">// 1</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// sort the array in ascending order</span>
-</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// n + 1</span>
-</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// (n + 1)(n + 1) -&gt; n^2 + 2n + 2</span>
-</span><span class='line'>        <span class="k">if</span><span class="o">(</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">])</span> <span class="o">{</span> <span class="c1">// potentially n(n + 1) -&gt; n^2 + 2n + 2</span>
-</span><span class='line'>          <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span> <span class="c1">// 1(n + 1)</span>
-</span><span class='line'>          <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">];</span> <span class="c1">// potentially n(n + 1) -&gt; n^2 + 2</span>
-</span><span class='line'>          <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span> <span class="c1">// 1(n + 1)</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">array</span><span class="o">[</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span> <span class="c1">// 1</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">[</span><span class="mi">3</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">7</span><span class="n">n</span> <span class="o">+</span> <span class="mi">9</span> <span class="n">complexity</span><span class="o">]</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">The</span> <span class="n">first</span> <span class="n">is</span> <span class="n">more</span> <span class="n">efficient</span><span class="o">.</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="mi">6</span><span class="o">.</span> <span class="n">Which</span> <span class="n">algorithm</span><span class="o">,</span> <span class="n">foo</span> <span class="n">or</span> <span class="n">bar</span><span class="o">,</span> <span class="n">is</span> <span class="n">faster</span> <span class="n">when</span> <span class="n">when</span> <span class="n">n</span> <span class="n">is</span> <span class="mi">10</span><span class="o">?</span> <span class="mi">100</span><span class="o">?</span> <span class="mi">1000</span><span class="o">?</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kt">int</span> <span class="nf">foo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">500</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 510, 600, 1500 operations</span>
-</span><span class='line'>      <span class="n">sum</span><span class="o">++;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span> <span class="o">=</span> <span class="mi">130</span><span class="o">,</span><span class="mi">305</span>
-</span><span class='line'>  <span class="n">foo</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span> <span class="o">=</span> <span class="mi">180</span><span class="o">,</span><span class="mi">300</span>
-</span><span class='line'>  <span class="n">foo</span><span class="o">(</span><span class="mi">1000</span><span class="o">)</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span><span class="mi">125</span><span class="o">,</span><span class="mi">750</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kt">int</span> <span class="nf">bar</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 10</span>
-</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span> <span class="c1">// 10</span>
-</span><span class='line'>        <span class="n">sum</span><span class="o">++;</span> <span class="c1">// 1</span>
-</span><span class='line'>      <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="mi">100</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span><span class="mi">000</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span><span class="mi">000</span><span class="o">,</span><span class="mi">000</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">bar</span> <span class="n">is</span> <span class="n">less</span> <span class="n">work</span> <span class="n">at</span> <span class="mi">10</span><span class="o">,</span> <span class="n">foo</span> <span class="k">for</span> <span class="n">the</span> <span class="n">others</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Optical Distortion, Inc. HBS Case Study]]></title>
-    <link href="http://adamjonas.com/blog/optical-distortion-inc-hbs-case-study/"/>
-    <updated>2016-04-13T16:02:00-04:00</updated>
-    <id>http://adamjonas.com/blog/optical-distortion-inc-hbs-case-study</id>
-    <content type="html"><![CDATA[<h2>ODI Discussion/Analysis Questions</h2>
-
-<p>1)</p>
-
-<ul>
-<li>What characteristics of the ODI lens are likely to make it appealing/unappealing to farmers?
-
-<ul>
-<li><p>Appealing</p>
-
-<ul>
-<li>debeaking causes problems of their own in terms of the trauma it causes hurts short term production (for a full week, only 1 egg lost by 5 months) and in the long term in feed is wasted. Debeaking is not an exact science but reduced cannibalism to 9% from 25%.</li>
-<li>for $2.50/hour could debeak approximately 220 birds per hour.</li>
-<li>actually modifies behavior as opposed to reducing the weapon. Reduces cannibalsim to 4.5% (1/2 of debeaking)
-
-<ul>
-<li>225 birds an hour to put in lense</li>
-</ul>
-</li>
-<li>reduces feed costs from 24.46 pounds to 23.68 lbs per 100 birds
-
-<ul>
-<li>20,000 bird flock could save 156 pounds of feed per day ($12.324/day)</li>
-<li>$158 per ton - $.079/lbs</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>unappealing</p>
-
-<ul>
-<li>more upfront cost</li>
-<li>can cause eye infection/fall out of place</li>
-<li>change from current practice.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<p>2)</p>
-
-<ul>
-<li>What is the value to famers of lenses over debeaking? Can you quantify it? (Hint: Think about savings from cannibalization, egg reduction, feed, and labor)
-
-<ul>
-<li>$.00073 a bird for the debeaking process (which would be unneccessary).</li>
-<li>$.22 per bird feed savings over a hen&#8217;s lifetime</li>
-<li>$.108 in reduction in replacement cost of of $.21 since lenses reduces cannibolism by 1/2.</li>
-<li><p>$.224 of added production in egg production. Hen lays 22 dozen eggs a year. If they lose a week of production from debeaking that is .423 dozen a week (which is 5 eggs a week) and if you assume that is $.53 a dozen that is $.224 cents of lost egg production per bird.</p></li>
-<li><p>adds up to ~$.33 in added value per bird over their lifetime -> for large farms (50,000 birds) that $17,500 in added revenue a year (though it is annual cashflow of $12 million). For a small farm (10k) is it $3,500.</p></li>
-</ul>
-</li>
-</ul>
-
-
-<p>3)</p>
-
-<ul>
-<li>What Pricing policy should ODI adopt and why? What is the savings per bird for farmers at these prices?
-
-<ul>
-<li>need market acceptance</li>
-<li><p>somewhere around $.35 per bird in added value, which would easily cover the $.07 price increase.</p></li>
-<li><p>Skimming Price</p>
-
-<ul>
-<li>For products that represent a drastic departure from accepted ways of performing a service, a policy of relatively high prices coupled with heavy promotional expenditures in the early stages of market development (and lower prices at later stages) has proved successful for many products.</li>
-</ul>
-</li>
-<li>Penetration pricing
-
-<ul>
-<li>This policy is the reverse of the skimming policy in which the price is lowered only as short-run competition forces it.</li>
-</ul>
-</li>
-</ul>
-
-
-<p><a href="https://hbr.org/1976/11/pricing-policies-for-new-products">Pricibg Strategies</a></p></li>
-</ul>
-
-
-<p>4)</p>
-
-<ul>
-<li>Can ODI turn a profit at these prices?
-
-<ul>
-<li>sell at $0.08 per pair</li>
-<li>cost $0.032 per pair + 12k (for first 15 million pairs)</li>
-<li>cost $592,000 to operate</li>
-<li>.048 per pair  in profit</li>
-<li>592,000 / .048 = 12,333,333 lens to break even meaning they need .1% market penetration.</li>
-</ul>
-</li>
-</ul>
-
-
-<p>5)</p>
-
-<ul>
-<li>How would you focus ODI&#8217;s marketing efforts? How would you segment the
-customer base?
-
-<ul>
-<li>345 farms have 20% of america&#8217;s chickens. If they closed 4 of those farms they would be able to able to turn an operating profit.
-
-<ul>
-<li>crowded farms would benefit most from this change and the sales process would be easiest.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
 ]]></content>
   </entry>
   

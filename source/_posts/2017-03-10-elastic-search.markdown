@@ -42,3 +42,19 @@ categories: search
   - kubana
     - front end visualizer
   - now beats added -> lightweight, written in go -> for shipping
+
+## Split Brain issue
+  - [HOW TO AVOID THE SPLIT-BRAIN PROBLEM IN ELASTICSEARCH](http://blog.trifork.com/2013/10/24/how-to-avoid-the-split-brain-problem-in-elasticsearch/)
+
+## Tinc
+  - VPN -> encrypts traffic between servers
+
+## Setting up elastic search
+  - [setting up a elasticsearch cluster on ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04)
+  - used a ruby case statement to set the master versus the replicas up
+  - [shards, replicas, documents explained](https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html)
+  - [Thoughts on Launching and Scaling Elasticsearch](https://qbox.io/blog/launching-and-scaling-elasticsearch)
+  - [optimizing sharding](https://qbox.io/blog/optimizing-elasticsearch-how-many-shards-per-index)
+    - `A good launch point for capacity planning is to allocate shards with a factor of 1.5 to 3 times the number of nodes in your initial configuration. If you're starting with 3 nodes, then we recommend that you specify at most 3 x 3 = 9 shards.`
+    - `We reiterate that shards consume resources and require processing overhead.`
+  - needed to bump vm.max_map_count according to [these instructions](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html)
