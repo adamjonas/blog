@@ -21,3 +21,7 @@ categories: DevOps
 ## Digital ocean
   - backups (auto) are different than snapshots (not auto) and different
   in pricing as well
+
+## Chef
+  - [ohai](https://docs.chef.io/ohai.html)
+  - [`chef-shell`](https://docs.chef.io/chef_shell.html)

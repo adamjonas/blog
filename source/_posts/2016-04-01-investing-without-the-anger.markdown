@@ -3,7 +3,7 @@ layout: post
 title: "Passion without Anger"
 date: 2016-04-01 12:45
 comments: true
-categories: management personal
+categories: personal
 ---
 
 I am fiery. That's euphemistic for being a little man with a short fuse. I've never been the type that can fall asleep in the middle of a movie. If I'm into it then I'm into it. I'm intense. And boy, do I love what I do. I like being a multiplier. My coding skills are middling at best. I wouldn't hire me for my team. Not enough raw talent. I like that I can impact the lives of the people on my team on a daily basis. That I can keep them motivated, engaged, fulfilled and happy. I feel like a mechanic that tunes highly customized and specialized machines. I once interviewed with the Yankees as a sports psychologist. Years later I feel like I have a similar, but better job. All that is to say, I take my responsibility to my people very seriously. 

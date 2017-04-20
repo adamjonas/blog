@@ -4,7 +4,7 @@
   <title><![CDATA[Hack hack hack...]]></title>
   <link href="http://adamjonas.com/atom.xml" rel="self"/>
   <link href="http://adamjonas.com/"/>
-  <updated>2017-03-31T11:46:07-04:00</updated>
+  <updated>2017-04-19T15:39:00-04:00</updated>
   <id>http://adamjonas.com/</id>
   <author>
     <name><![CDATA[Adam Jonas]]></name>
@@ -12,6 +12,142 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Intro to React]]></title>
+    <link href="http://adamjonas.com/blog/intro-to-react/"/>
+    <updated>2017-04-07T11:30:00-04:00</updated>
+    <id>http://adamjonas.com/blog/intro-to-react</id>
+    <content type="html"><![CDATA[<h2>React event</h2>
+
+<ul>
+<li>similar to normal <a href="https://facebook.github.io/react/docs/handling-events.html">event handling</a> (responds to target and such, but has other properties)</li>
+</ul>
+
+
+<h2>Refs and the Dom</h2>
+
+<ul>
+<li><a href="https://facebook.github.io/react/docs/refs-and-the-dom.html">ref documentation</a></li>
+</ul>
+
+
+<h2>Props</h2>
+
+<ul>
+<li>They are the mechanism used in React for passing data from parent to child components</li>
+<li>Props can’t be changed from inside the component; they are passed and “owned” by the parent.</li>
+</ul>
+
+
+<h2>State</h2>
+
+<ul>
+<li>React’s components can have mutable data inside this.state.</li>
+<li>when the state is updated, the component triggers the reactive rendering, and the component itself and its children will be re-rendered. As mentioned, this happens very quickly due to React’s use of a virtual DOM.</li>
+</ul>
+
+
+<h2>Component to action to store</h2>
+
+<ul>
+<li> the store is subscribed to the action</li>
+<li> components subscribed to stores -> re-render</li>
+<li><p> props are immutible -> given the state of the application, what doe the component look like?</p></li>
+<li><p>?what is the value of the actions step -> ususually just passing through to the store</p></li>
+<li><p>user inputs triggers the action</p></li>
+<li>inputs into the system -> actions</li>
+<li>action updates the state</li>
+<li><p>which updates the components</p></li>
+<li><p>store is more flexibile than backbone collections and models</p></li>
+<li>based on the change what literal DOM manipulations are needed -> taken care of virtual DOM</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How Linux Works: What Every Superuser Should Know]]></title>
+    <link href="http://adamjonas.com/blog/how-linux-works-what-every-superuser-should-know/"/>
+    <updated>2017-04-05T12:13:00-04:00</updated>
+    <id>http://adamjonas.com/blog/how-linux-works-what-every-superuser-should-know</id>
+    <content type="html"><![CDATA[<h2>Posix shell and Utilities</h2>
+
+<ul>
+<li>from <a href="http://shellhaters.org/talk">Shell Hater&#8217;s handbook with Ryan Tomayko</a></li>
+<li><a href="http://shellhaters.org/">posix docs</a></li>
+</ul>
+
+
+<h2>fork() &amp; exec()</h2>
+
+<ul>
+<li>When running exec() programs, you are forking a shell and running it on that</li>
+<li><a href="https://www.bottomupcs.com/fork_and_exec.xhtml">Fork and exec</a></li>
+<li><a href="http://askubuntu.com/questions/428458/why-do-shells-call-fork">Why do shells call fork?</a>
+
+<ul>
+<li>exec can only run one thing. So shell creates the child shell runs exec and then returns.</li>
+</ul>
+</li>
+<li>fork() clones the current process, creating an identical child. exec() loads a new program into the current process, replacing the existing one. <a href="http://unix.stackexchange.com/questions/179604/how-do-fork-and-exec-work">From</a></li>
+</ul>
+
+
+<h2>Time slice</h2>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Preemption_(computing">time slice</a>#Time_slice) managed by the scheduler of the CPU. Time slices are <a href="https://superuser.com/a/684394">variable</a> -> need this to keep the illusion of concurrency(having multiple processes at the same time) and multi-tasking, but with one core there is no possibility of doing paralellism.</li>
+</ul>
+
+
+<h2>Builtins</h2>
+
+<ul>
+<li>(wikipedia)[https://en.wikipedia.org/wiki/Shell_builtin]
+
+<ul>
+<li>executed directly in the shell itself, instead of an external executable program which the shell would load and execute.</li>
+<li>Shell builtins work significantly faster than external programs, because there is no program loading overhead.</li>
+<li>most notable example is <code>cd</code></li>
+<li><code>cd</code> has to be a builtin because the shell itself needs to change its &#8220;cwd&#8221; - current working directory - not a sub-process. The goal of &#8220;cd&#8221; is to change the current working directory of the shell itself, and that can&#8217;t be accomplished from a child process without a lot of special hackery which would end up being more complex than the builtin. <a href="https://www.quora.com/Unix-Why-is-cd-a-built-in-command-in-the-shell-and-not-an-executable-program-like-the-command-ls">from</a>
+
+<ul>
+<li>great explanation on how it came to be with a quote from <a href="http://unix.stackexchange.com/a/38819">Dennis Ritchie</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Memory Management</h2>
+
+<ul>
+<li>swap -> using the hard disk as RAM</li>
+<li>A <a href="https://en.wikipedia.org/wiki/Page_table">page table</a> is the data structure used by a virtual memory system in a computer operating system to store the mapping between virtual addresses and physical addresses. Virtual addresses are used by the accessing process, while physical addresses are used by the hardware, or more specifically, by the RAM subsystem.</li>
+</ul>
+
+
+<h2>Tree</h2>
+
+<ul>
+<li><a href="https://superuser.com/questions/359723/mac-os-x-equivalent-of-the-ubuntu-tree-command">tree</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vimmin]]></title>
+    <link href="http://adamjonas.com/blog/vimmin/"/>
+    <updated>2017-04-04T15:37:00-04:00</updated>
+    <id>http://adamjonas.com/blog/vimmin</id>
+    <content type="html"><![CDATA[<p>Command-T was killing me. Vim was built against the system ruby while
+the command-t plugin was set to the default. So I had to jump through a
+few hoops described <a href="https://github.com/wincent/command-t/issues/228">here</a>. A pain. Done though.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[More Ops Notes]]></title>
@@ -47,6 +183,14 @@ control services. <a href="https://www.digitalocean.com/community/tutorials/how-
 <ul>
 <li>backups (auto) are different than snapshots (not auto) and different
 in pricing as well</li>
+</ul>
+
+
+<h2>Chef</h2>
+
+<ul>
+<li><a href="https://docs.chef.io/ohai.html">ohai</a></li>
+<li><a href="https://docs.chef.io/chef_shell.html"><code>chef-shell</code></a></li>
 </ul>
 
 ]]></content>
@@ -616,6 +760,7 @@ number</li>
 </ul>
 </li>
 <li>needed to bump vm.max_map_count according to <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html">these instructions</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04">UFW</a> -> wasn&#8217;t needed in the end</li>
 </ul>
 
 ]]></content>
@@ -1308,122 +1453,6 @@ intermediary</li>
 <p>I’ve heard coders talk about how bad managers are out of touch because they don’t build anything anymore. I agree, which scares me. Which is why I want to try an experiment. I went on a paternity leave in October for a full month. I totally unplugged and trusted my lieutenants to carry the load. It went fine. No fires. Nobody quit. No month long rabbit holes anyone fell into. There was some maintenance and fine tuning to be done upon my return and some of the project assignments were off, but overall things went well. Meaning that if I disappeared for another month things would likely be fine again. Meaning I could become a dev for a month and let my lieutenants run the show again. I think it would be hard for me to resist my natural inclination to push, nudge and otherwise direct how the team runs, but what might happen if I stop going to all the high level meetings? We’ll find out. I’m going to propose we try it next month.</p>
 
 <p>To be the manager my people deserve for a team of certain size I needed to let go of my drive to code. Sure I can nibble on small projects, but my days of plugging in and zoning out are seemingly over. Hybrids can be of value, but if you are running the show and managing anything larger than a team of 7-8 then you are doing yourself and your team a disservice by trying to focus on anything but your people.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Onboarding]]></title>
-    <link href="http://adamjonas.com/blog/onboarding/"/>
-    <updated>2016-08-26T10:01:00-04:00</updated>
-    <id>http://adamjonas.com/blog/onboarding</id>
-    <content type="html"><![CDATA[<p>I’ve read a lot of articles about onboarding, but I’m not sure I come away with anything that actually changes my process. We all know that onboarding is important. Given how many juniors are on our team, it is essential for them to be brought up to speed as quickly as possible so that they have a chance at being productive.</p>
-
-<p>Onboarding starts during the hiring process. This is why compensation negotiation is so tricky. People need to be excited about starting. A difficult negotiation becomes very personal. This is the purpose agents play. They are able to distant their clients for a painful negotiation so that it is less personal.</p>
-
-<p>After the candidate has accepted, if given the opportunity, I really push for the new hire to take a good amount of time off. I refer to these as “bookends” and I believe there should be a good amount of space between her last experience and her new one. A new hire is usually surprised by this, but it sets the tone for a more caring managerial relationship than they have experienced before. The message is clear. You are a hard worker, you deserve a break. We will wait for you. Come when you are ready.</p>
-
-<p>For the purposes of this article, I’m going to focus on junior hires because I think their onboarding process is likely more complicated than their senior counterparts. Juniors need a ton of attention when they arrive. I mean like daily check-ins, scheduled lunches and coffees and firm direction on what code to explore. I start with the <a href="https://github.com/flatiron-labs/wiki/blob/master/ONBOARDING.md">onboarding readme</a> on our team wiki. We also have a <a href="https://github.com/flatiron-labs/wiki/blob/master/DEV_EXPECTATIONS.md">dev expectations readme</a>.</p>
-
-<p>I’ve pushed new hires to improve the docs as they read them with so-so results. The truth of the matter is, they can’t recognize what they need to know until a few weeks in and by they their attention has turned to feature development. Maybe asking them to take another scan after a couple months would be an effective way to improve the system.</p>
-
-<p>The first few 1 on 1s are critical. This is a time to allay fears about imposter syndrome and provide a lot of encouragement upfront. Juniors have never seen a code base as large as ours and they are intimidated. Reminding them it is the exact same, there is just more of it will not be heard the first few times you say it. It will need to be repeated a dozen or so times before it sticks. You belong. We are confident you belong. We wouldn’t have hired you if we weren’t. We don’t make hiring mistake. Whether it is true or not, that’s the message and willl give you the best shot at success.</p>
-
-<p>The first few assignments are also very important and I&#8217;ve learned to not be so cavalier with them. Here are some of my favorites:</p>
-
-<ul>
-<li>Specs: There are always things to improve in the test suite and giving the new hire some space to go down a few rabbit holes will familiarize her with how the system works while at the same time immediately adding value.</li>
-<li>Refactors: Improving your most incomprehensible code immediately makes the new hire a hero after they can untangle your mess. Again, giving him some space to explore how the system interacts is time well invested.</li>
-<li>Small feature win: Shipping something immediately makes everyone feel good. Not only are they able to quickly get a win on the board, but they also can immediately feel the builder’s high and pride of owning a user facing feature.</li>
-<li>Pairing: Pairing can be combined in all these scenarios but pairing takes the pressure off of the new hire by making sure they aren’t going it alone. Insisting the new hire to drive anecdotally also seems to increase confidence and ensures she doesn’t become a passive observer.</li>
-<li>Onboarding the next noob: Allowing a new hire to onboard the next new hire has been really effective for my team since it proves how much he has learned about the code and our process. While the timing is a key element, I’ve seen confidence levels dramatically shoot up after shepherding a new hire.</li>
-</ul>
-
-
-<p>There isn’t anything all that novel here. I think giving a new hire a lot of attention and making sure they don’t flounder too much is the basic goal (a little flopping around is OK). Even if they are working on a project, allowing for an orientation period takes the pressure off and allows them to explore the code. This is time well spent. For a new junior hire, I’ve made the mistake of putting deadlines around that first project with disastrous results.</p>
-
-<p>Ramping up not only helps a new hire feel productive and competent, it also affects our team dynamic. We need all of our team members to participate in our difficult discussions and if a new hire lacks confidence in their code contributions they also sideline themselves in our team dynamics. Poor onboading is an opportunity lost to build rapport and establish confidence while good onboarding usually leads to individual comfort and immediate buy-in. So while it can be very time intensive, for me it has been worth the investment.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linchpin by Seth Godin Notes]]></title>
-    <link href="http://adamjonas.com/blog/linchpin-by-seth-godin-notes/"/>
-    <updated>2016-07-27T11:36:00-04:00</updated>
-    <id>http://adamjonas.com/blog/linchpin-by-seth-godin-notes</id>
-    <content type="html"><![CDATA[<ul>
-<li>Notes:
-
-<ul>
-<li>Obedience is no longer rewarded - 4</li>
-<li>We weren&#8217;t born to be cogs, we were trained to be cogs - 6</li>
-<li>schools should teach: how to solve interesting problems, how to lead - 47</li>
-<li><em>Emotional labor</em> - 57</li>
-<li>Jean baptist Colbert - 63: did he write down any of his thoughts?</li>
-<li>Acknowledge fear, then proceeds - 65</li>
-<li>Tom peters - 83</li>
-<li>No one cares how hard you work- 95</li>
-<li>Someone can do your job better and cheaper, not your art - 97</li>
-<li>Artists are optimists- 98</li>
-<li>Creativity is the instinct to produce - 102</li>
-<li>Shipping -101-103</li>
-<li>Steve McConnell - poorly timed thrashing 104</li>
-<li>Elizabeth Gilbert Ted talk - 106</li>
-<li>War of art, Steve pressfield- 107</li>
-<li>Bio of lizard brain -109</li>
-<li>You are a winner because you learn from losing - 115</li>
-<li>3 biological factors that drive job performance: social intelligence, fear response, and perception - public speaking brings together all 3 - 124</li>
-<li>Fear is the most important emotion we have - it kept our ancestors alive. It dominates all other emotions. 124</li>
-<li>Symptoms of lizard brain - 127</li>
-<li>Leo babauta zen habits - 135</li>
-<li>Shenpa: Tibetan word that roughly means scratching the itch - 138</li>
-<li>Planing with the index card technique  146</li>
-<li>Permission marketing? - 148</li>
-<li>Pizzeria owner made shirts with bad Yelp reviews - 152</li>
-<li>Damaging business book - Robert ringer - looking out for number one 153</li>
-<li>Linus will never need to worry about finding work because he gave away Linux - 162</li>
-<li>Sunny bates - 166</li>
-<li>Clay shirky, Dan rushkoff - 169</li>
-<li>Richard Branson - chartering a plane - 180</li>
-<li>Can&#8217;t get attached to the objects of your attention -184</li>
-<li>Art is defined by the fact I can&#8217;t tell you how to do it - 188</li>
-<li>Your product should match your marketing, not the other way round -201</li>
-<li>Deanna Vogt, Corp coach -202</li>
-<li>Resilience, Ralph Waldo Emerson - 208</li>
-<li>5 elements of a personality: openness, conscientiousness, extraversion, agreeableness, and emotional stability - 210</li>
-<li>Honest signals, book - 214</li>
-<li>Dale Carnegie - 217</li>
-<li>Creative -</li>
-<li>Personal, original, unexpected, useful.</li>
-<li>Unique creative - domain knowledge, position of trust, generosity to contribute back - 219</li>
-<li>Org obey newton&#8217;s laws: a team at rest stays at rest - 221</li>
-<li>Lester Wunderman: invented direct marketing - 222</li>
-<li>Focus on making change down not up. Interacting with customers and employees is easier than bosses and investors - 229</li>
-<li>Pranja - see the world objectively - 235</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Patterns of Enterprise Application Architecture]]></title>
-    <link href="http://adamjonas.com/blog/patterns-of-enterprise-application-architecture/"/>
-    <updated>2016-05-30T17:08:00-04:00</updated>
-    <id>http://adamjonas.com/blog/patterns-of-enterprise-application-architecture</id>
-    <content type="html"><![CDATA[<h2>Introduction:</h2>
-
-<blockquote><p>“Architecture” is a term that lots of people try to define, with little agree- ment. There are two common elements: One is the highest-level breakdown of a system into its parts; the other, decisions that are hard to change. It’s also increasingly realized that there isn’t just one way to state a system’s architec- ture; rather, there are multiple architectures in a system, and the view of what is architecturally significant is one that can change over a system’s lifetime. p. 1.</p>
-
-<p>The subjectivity comes in here as well because, if you find that something is easier to change than you once thought, then it’s no longer architectural. In the end architecture boils down to the important stuff—whatever that is. p. 2</p>
-
-<p><em>Responsiveness</em> is about how quickly the system acknowledges a request as opposed to processing it. This is important in many systems because users may become frustrated if a system has low responsiveness, even if its response time is good. If your system waits during the whole request, then your responsiveness and response time are the same. However, if you indicate that you’ve received the request before you complete, then your responsiveness is better. Providing a progress bar during a file copy improves the responsiveness of your user inter- face, even though it doesn’t improve response time. p. 7</p></blockquote>
-
-<h3>Patterns</h3>
-
-<blockquote><p>There’s no generally accepted definition of a pattern, but perhaps the best place to start is Christopher Alexander, an inspiration for many pattern enthusi- asts: “Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice” [Alexander et al.]. Alexander is an architect, so he was talking about buildings, but the definition works pretty nicely for software as well. The focus of the pattern is a particular solution, one that’s both com- mon and effective in dealing with one or more recurring problems. Another way of looking at it is that a pattern is a chunk of advice and the art of creating patterns is to divide up many pieces of advice into relatively independent chunks so that you can refer to them and discuss them more or less separately. p. 9</p></blockquote>
-
-<h2>Making a choice</h2>
 ]]></content>
   </entry>
   

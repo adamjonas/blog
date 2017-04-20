@@ -58,3 +58,4 @@ categories: search
     - `A good launch point for capacity planning is to allocate shards with a factor of 1.5 to 3 times the number of nodes in your initial configuration. If you're starting with 3 nodes, then we recommend that you specify at most 3 x 3 = 9 shards.`
     - `We reiterate that shards consume resources and require processing overhead.`
   - needed to bump vm.max_map_count according to [these instructions](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html)
+  - [UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04) -> wasn't needed in the end
